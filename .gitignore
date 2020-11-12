@@ -58,3 +58,16 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+#GradsIgnore
+.vs/
+Assembly-CSharp.csproj
+Assembly-CSharp.csproj.user
+Assembly-CSharp-Editor.csproj
+Library/
+Logs/
+Temp/
+obj/
+UserSettings/
+sfas_2021.sln
+SFAS.sln
+
