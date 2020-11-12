@@ -13,7 +13,7 @@ public class Game : MonoBehaviour
     {
         _output = GetComponentInChildren<TextDisplay>();
         _currentBeat = null;
-        _wait = new WaitForSeconds(.5f);
+        _wait = new WaitForSeconds(0.5f);
     }
 
     private void Update()
@@ -33,13 +33,14 @@ public class Game : MonoBehaviour
 
     private void UpdateInput()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.T)) //Changed as escape doesnt work in editor
         {
+            print("I PRESSED");
             if(_currentBeat != null)
             {
                 if (_currentBeat.ID == 1)
                 {
-                    Application.Quit();
+                    Application.Quit(); // TODO - Kick to main menu
                 }
                 else
                 {
