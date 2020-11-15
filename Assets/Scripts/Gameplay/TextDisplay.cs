@@ -4,6 +4,8 @@ using TMPro;
 
 public class TextDisplay : MonoBehaviour
 {
+
+    [SerializeField] private LaptopAudioManager laptopAudio;
     public enum State { Initialising, Idle, Busy }
 
     private TMP_Text _displayText;
@@ -18,8 +20,8 @@ public class TextDisplay : MonoBehaviour
     private void Awake()
     {
         _displayText = GetComponent<TMP_Text>();
-        _shortWait = new WaitForSeconds(0.01f); //Orignial 0.1f
-        _longWait = new WaitForSeconds(0.8f);
+        _shortWait = new WaitForSeconds(0.1f); //Orignial 0.1f
+        _longWait = new WaitForSeconds(1.0f); //Original 0.8f
 
         _displayText.text = string.Empty;
         _state = State.Idle;
@@ -27,6 +29,7 @@ public class TextDisplay : MonoBehaviour
 
     private IEnumerator DoShowText(string text)
     {
+        laptopAudio.StartTyping();
         int currentLetter = 0;
         char[] charArray = text.ToCharArray();
 
@@ -36,6 +39,8 @@ public class TextDisplay : MonoBehaviour
             yield return _shortWait;
         }
 
+        laptopAudio.Stop();
+
         _displayText.text += "\n";
         _displayString = _displayText.text;
         _state = State.Idle;
@@ -43,6 +48,7 @@ public class TextDisplay : MonoBehaviour
 
     private IEnumerator DoAwaitingInput()
     {
+        laptopAudio.StartWaiting();
         bool on = true;
 
         while (enabled)
@@ -51,6 +57,7 @@ public class TextDisplay : MonoBehaviour
             on = !on;
             yield return _longWait;
         }
+        laptopAudio.Stop();
     }
 
     private IEnumerator DoClearText()
