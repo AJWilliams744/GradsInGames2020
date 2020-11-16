@@ -1,9 +1,11 @@
 ﻿using System.Collections;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Game : MonoBehaviour
 {
     [SerializeField] private StoryData _data;
+    [SerializeField] private MusicManager musicManager;
 
     private TextDisplay _output;
     private BeatData _currentBeat;
@@ -60,7 +62,7 @@ public class Game : MonoBehaviour
                     if (Input.GetKeyDown(alpha) || Input.GetKeyDown(keypad))
                     {
                         ChoiceData choice = _currentBeat.Decision[count];
-                        DisplayBeat(choice.NextID);
+                        DisplayBeat(choice.NextID);                       
                         break;
                     }
                 }
@@ -107,7 +109,23 @@ public class Game : MonoBehaviour
 
         if(data.Decision.Count > 0)
         {
+            musicManager.Stop();
             _output.ShowWaitingForInput();
         }
+
+        StartCoroutine(HandleInstructionEnd());
+    }
+
+    private IEnumerator HandleInstructionEnd()
+    {
+        Instruction currentInstruction = _currentBeat.Instruction;
+        if(currentInstruction.TravelInstruction == TravelInstructions.Travel)
+        {
+            print(currentInstruction.Location);
+            yield return new WaitForSeconds(5);
+            PlayerPrefs.SetInt("Scene", (int)currentInstruction.Location);
+            SceneManager.LoadScene("LoadingScene");
+        }
+
     }
 }

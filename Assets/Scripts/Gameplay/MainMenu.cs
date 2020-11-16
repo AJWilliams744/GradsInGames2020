@@ -35,9 +35,10 @@ public class MainMenu : MonoBehaviour
 
     //Allow for camera to reach laptop before starting
     IEnumerator StartGame()
-    {               
-        yield return new WaitForSeconds(waitTime);
-        game.enabled = true;
+    {
         musicManager.NextSong();
+        yield return new WaitForSeconds(waitTime);
+        game.enabled = true;       
+
     }
 }
