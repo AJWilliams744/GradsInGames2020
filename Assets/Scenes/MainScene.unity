@@ -157,6 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: 03cbbe32d42b96d45b61c384a692dc19, type: 2}
   musicManager: {fileID: 2104026924}
+  renderAsset: {fileID: 11400000, guid: bb01b9ca3a7d2e245bd6006f9ec69108, type: 2}
 --- !u!114 &32768962
 MonoBehaviour:
   m_ObjectHideFlags: 0

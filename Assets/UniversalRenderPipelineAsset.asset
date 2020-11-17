@@ -17,10 +17,11 @@ MonoBehaviour:
   m_RendererType: 1
   m_RendererData: {fileID: 0}
   m_RendererDataList:
-  - {fileID: 11400000, guid: 671b4b4207b63074a9e85d8463de231a, type: 2}
+  - {fileID: 11400000, guid: 86636e855d72cdf4ebb96c746eedc8e6, type: 2}
+  - {fileID: 11400000, guid: 5450f9de19b30d7458e204a3ad70afd8, type: 2}
   m_DefaultRendererIndex: 0
   m_RequireDepthTexture: 1
-  m_RequireOpaqueTexture: 0
+  m_RequireOpaqueTexture: 1
   m_OpaqueDownsampling: 1
   m_SupportsTerrainHoles: 1
   m_SupportsHDR: 0

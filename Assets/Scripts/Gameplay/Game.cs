@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Game : MonoBehaviour
 {
     [SerializeField] private StoryData _data;
     [SerializeField] private MusicManager musicManager;
+
+    [SerializeField] private RenderPipelineAsset renderAsset;
 
     private TextDisplay _output;
     private BeatData _currentBeat;
