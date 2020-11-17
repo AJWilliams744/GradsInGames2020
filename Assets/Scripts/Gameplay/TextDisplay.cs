@@ -6,6 +6,7 @@ public class TextDisplay : MonoBehaviour
 {
 
     [SerializeField] private LaptopAudioManager laptopAudio;
+    [SerializeField] private LaptopLightManager laptopLight;
     public enum State { Initialising, Idle, Busy }
 
     private TMP_Text _displayText;
@@ -29,7 +30,9 @@ public class TextDisplay : MonoBehaviour
 
     private IEnumerator DoShowText(string text)
     {
+        laptopLight.SwitchOnLight();
         laptopAudio.StartTyping();
+
         int currentLetter = 0;
         char[] charArray = text.ToCharArray();
 
@@ -48,7 +51,9 @@ public class TextDisplay : MonoBehaviour
 
     private IEnumerator DoAwaitingInput()
     {
+        laptopLight.SwitchOnLight();
         laptopAudio.StartWaiting();
+
         bool on = true;
 
         while (enabled)
@@ -82,6 +87,7 @@ public class TextDisplay : MonoBehaviour
             yield return null;
         }
 
+        laptopLight.SwitchOffLight();
         _displayString = string.Empty;
         _displayText.text = _displayString;
         _state = State.Idle;
