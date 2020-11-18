@@ -17,5 +17,5 @@ MonoBehaviour:
     _text: First Story Beat
     _id: 1
     _Instruction:
-      _Instruction: 0
+      _Instruction: 1
       _Locations: 0

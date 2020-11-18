@@ -127,6 +127,9 @@ public class Game : MonoBehaviour
             yield return new WaitForSeconds(5);
             PlayerPrefs.SetInt("Scene", (int)currentInstruction.Location);
             SceneManager.LoadScene("LoadingScene");
+        }else if( currentInstruction.TravelInstruction == TravelInstructions.Stay)
+        {
+
         }
 
     }

@@ -21,8 +21,10 @@ Material:
     m_TexEnvs: []
     m_Floats:
     - _Contrast: 2.9
-    - _RippleDensity: 122.4
+    - _RippleDensity: 7.31
     - _RippleSpeed: 1.2
+    - _WaveHeight: 1.6
+    - _WaveSpeed: 0.1
     m_Colors:
     - _BaseColour: {r: 0.3443396, g: 0.6668047, b: 1, a: 1}
     - _RippleColour: {r: 0, g: 2, b: 1.788235, a: 0}
