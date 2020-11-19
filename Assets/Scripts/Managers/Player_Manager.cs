@@ -5,6 +5,15 @@ using UnityEngine;
 public class Player_Manager : MonoBehaviour
 {
     [SerializeField] private MonoBehaviour[] AllScriptsToDisable; //When player is disabled
+    [SerializeField] private GameObject Camera;
+    [SerializeField] private PlayerMovement playerMovement;
+
+    private Game_Manager gm;
+
+    private void Start()
+    {
+        gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Game_Manager>();
+    }
 
     public void DisablePlayer()
     {
@@ -24,23 +33,47 @@ public class Player_Manager : MonoBehaviour
         }
     }
 
-    public void MoveToLaptop()
+    public void MoveToLaptop(Transform lookAtTransform)
     {
-        StartCoroutine(MoveOverTime(new Vector3(0, 0, 0), new Vector3(0, 0, 0), 5f));
+        StartCoroutine(MoveOverTime(lookAtTransform.position,lookAtTransform.rotation, 2f));
     }
 
-    private IEnumerator MoveOverTime(Vector3 newPos, Vector3 newRot, float time)
+    private IEnumerator MoveOverTime(Vector3 newPos, Quaternion newRot, float time) //TODO - Work out to rotate quaternion correctly
     {
-        Vector3 originalPos = transform.position;
-        Vector3 originalRot = transform.rotation.eulerAngles;
+        Vector3 originalPos = transform.position;       
 
+        //Quaternion camXRot = Quaternion.Euler(new Vector3(Camera.transform.rotation.x, 0, 0));
+        //Quaternion playerYRot = Quaternion.Euler(new Vector3(0, transform.eulerAngles.y, 0)); ;
+
+        //Quaternion newX = Quaternion.Euler(new Vector3(newRot.eulerAngles.x,0,0));
+        //Quaternion newY = Quaternion.Euler(new Vector3(0,newRot.eulerAngles.y, 0)); 
+
+      
         float localTime = Time.deltaTime;
 
         while (localTime < time)
         {            
             transform.position = Vector3.Lerp(originalPos, newPos, localTime / time);
+            //transform.rotation = Quaternion.Slerp(playerYRot, newY, localTime / time);
+
+            //Camera.transform.rotation = Quaternion.Slerp(camXRot, newX, localTime / time);
+            
             localTime += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "KillZone")
+        {
+            gm.PlayerDead();
+        }
+
+    }
+
+    public void TeleportPlayer(Transform newLocation)
+    {
+        playerMovement.TeleportPlayer(newLocation);
     }
 }

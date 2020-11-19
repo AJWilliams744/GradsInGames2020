@@ -120,6 +120,7 @@ public class Game : MonoBehaviour
 
     private IEnumerator HandleInstructionEnd()
     {
+        print("PRINT ME");
         Instruction currentInstruction = _currentBeat.Instruction;
         if(currentInstruction.TravelInstruction == TravelInstructions.Travel)
         {

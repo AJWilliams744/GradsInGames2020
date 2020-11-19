@@ -10,36 +10,52 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf5d5e33bab057c43929a11bc8f25f44, type: 3}
-  m_Name: MainMenuStory
+  m_Name: Story
   m_EditorClassIdentifier: 
   _beats:
   - _choices:
-    - _text: Travel to Dimension 45
+    - _text: Beat With Speed
       _beatId: 2
-    - _text: Travel to Dimension Blue
+    - _text: Beat with Brains
       _beatId: 3
-    _text: "Good, there seems to be power in the air here. Looks like we can talk.\nI'll
-      try to guide you on your journey but there's only so much I can do from here.
-      \nI can't stay too long as they'll find me, so you've got a choice to make.\n"
+    - _text: Run Away (Quit)
+      _beatId: 4
+    _text: 'I''ve given them the slip for now. Intresting choice you made coming
+      here.
+
+      The alarm will trigger if you stay here too long, so try to move
+      on quickly.
+
+
+      There are 2 ways to progress, 3 is you count running away.
+
+
+
+
+'
     _id: 1
     _Instruction:
       _Instruction: 2
-      _Locations: 0
-      _ChoiceTriggers: 0
-  - _choices: []
-    _text: 'Hold on, Traveling to Dimension 45
-
-
-      Good Luck...'
-    _id: 2
-    _Instruction:
-      _Instruction: 0
       _Locations: 1
       _ChoiceTriggers: 0
   - _choices: []
-    _text: "Hold on, Traveling to Dimension Blue \n\nGood Luck..."
+    _text: New Story Beat
+    _id: 2
+    _Instruction:
+      _Instruction: 1
+      _Locations: 1
+      _ChoiceTriggers: 0
+  - _choices: []
+    _text: New Story Beat
     _id: 3
     _Instruction:
+      _Instruction: 1
+      _Locations: 1
+      _ChoiceTriggers: 1
+  - _choices: []
+    _text: Try to remember how to get back here, lets see if I can hide till then.
+    _id: 4
+    _Instruction:
       _Instruction: 0
-      _Locations: 2
+      _Locations: 0
       _ChoiceTriggers: 0

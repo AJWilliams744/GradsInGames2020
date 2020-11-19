@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface Interactable
-{
-    void Interact();
-}
+
 
 public class PlayerInteract : MonoBehaviour
 {

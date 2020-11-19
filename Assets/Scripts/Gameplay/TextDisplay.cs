@@ -4,7 +4,7 @@ using TMPro;
 
 public class TextDisplay : MonoBehaviour
 {
-
+    [SerializeField] private bool fastText;
     [SerializeField] private LaptopAudioManager laptopAudio;
     [SerializeField] private LaptopLightManager laptopLight;
     public enum State { Initialising, Idle, Busy }
@@ -21,7 +21,15 @@ public class TextDisplay : MonoBehaviour
     private void Awake()
     {
         _displayText = GetComponent<TMP_Text>();
-        _shortWait = new WaitForSeconds(0.01f); //Orignial 0.1f
+        if (fastText)
+        {
+            _shortWait = new WaitForSeconds(0.01f);
+        }
+        else
+        {
+            _shortWait = new WaitForSeconds(0.1f);
+        }
+         
         _longWait = new WaitForSeconds(1.0f); //Original 0.8f
 
         _displayText.text = string.Empty;

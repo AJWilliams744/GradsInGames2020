@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public CharacterController controller;
-    public float speed = 12f;
-    public float gravity = -9.91f;
-    public float jumpHeight = 3f;
+    [SerializeField] private CharacterController controller;
+    [SerializeField] private float speed = 12f;
+    [SerializeField] private float gravity = -9.91f;
+    [SerializeField] private float jumpHeight = 3f;
 
-    public Transform groundCheck;
-    public float groundDistance = 0.4f;
-    public LayerMask groundMask;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private float groundDistance = 0.4f;
+    [SerializeField] private LayerMask groundMask;
 
-    Vector3 velocity;
-    bool isGrounded;
+    private Vector3 velocity;
+    private bool isGrounded;
 
     void Update()
     {
@@ -42,4 +42,15 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
     }
+
+    public void TeleportPlayer(Transform newLocation)
+    {
+        controller.enabled = false;
+
+        controller.transform.position = newLocation.position;
+
+        controller.enabled = true; 
+        
+    }
+
 }

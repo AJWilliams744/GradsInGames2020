@@ -16,6 +16,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         game.enabled = false;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     // Hide Menu, start animation and start game once animation is complete

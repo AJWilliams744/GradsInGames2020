@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _beats:
   - _choices: []
-    _text: First Story Beat
+    _text: Looks like the loops reset here once the alarm is triggered
     _id: 1
     _Instruction:
       _Instruction: 1
       _Locations: 0
+      _ChoiceTriggers: 0
