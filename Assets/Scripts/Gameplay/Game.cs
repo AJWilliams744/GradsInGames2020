@@ -8,6 +8,7 @@ public class Game : MonoBehaviour
     [SerializeField] private StoryData _data;
     [SerializeField] private MusicManager musicManager;
 
+    private Game_Manager gm;
 
     private TextDisplay _output;
     private BeatData _currentBeat;
@@ -18,6 +19,8 @@ public class Game : MonoBehaviour
         _output = GetComponentInChildren<TextDisplay>();
         _currentBeat = null;
         _wait = new WaitForSeconds(0.5f);
+
+        gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Game_Manager>();
     }
 
     private void Update()
@@ -120,7 +123,6 @@ public class Game : MonoBehaviour
 
     private IEnumerator HandleInstructionEnd()
     {
-        print("PRINT ME");
         Instruction currentInstruction = _currentBeat.Instruction;
         if(currentInstruction.TravelInstruction == TravelInstructions.Travel)
         {
@@ -128,10 +130,19 @@ public class Game : MonoBehaviour
             yield return new WaitForSeconds(5);
             PlayerPrefs.SetInt("Scene", (int)currentInstruction.Location);
             SceneManager.LoadScene("LoadingScene");
-        }else if( currentInstruction.TravelInstruction == TravelInstructions.Stay)
+        }else if(currentInstruction.TravelInstruction == TravelInstructions.ActivateChoice)
         {
-
+            if(gm != null)
+            {
+                gm.ChoiceSelected((int)currentInstruction.ChoiceTriggers);
+                LeaveLaptop();
+            }
         }
 
+    }
+
+    private void LeaveLaptop()
+    {
+        gm.EndLaptopInteract();
     }
 }

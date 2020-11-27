@@ -6,6 +6,7 @@ public class LaptopInteract : MonoBehaviour, Interactable
 {
     private Game_Manager gameManager;
     [SerializeField] private Transform playerLookTransform;
+    [SerializeField] private Transform playerReturnTransform;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,16 @@ public class LaptopInteract : MonoBehaviour, Interactable
 
     public void Interact()
     {
-        gameManager.StartLaptopInteract(playerLookTransform);
+        gameManager.StartLaptopInteract(playerLookTransform, playerReturnTransform);
     }
+
+    public Transform GetReturnTransform()
+    {
+        return playerReturnTransform;
+    }
+
+    //public void Leave()
+    //{
+    //    gameManager.EndLaptopInteract(playerReturnTransform);
+    //}
 }

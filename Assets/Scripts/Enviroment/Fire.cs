@@ -8,6 +8,9 @@ public class Fire : MonoBehaviour
     [SerializeField] private float maxFireBrightness = 80;
     [SerializeField] private float flickerSpeed = 0f;
 
+    [SerializeField] private float minRandomRange = 0;
+    [SerializeField] private float maxRandomRange = 1;
+
     [SerializeField] private Light flameLight;
 
     private void Start()
@@ -24,16 +27,19 @@ public class Fire : MonoBehaviour
     {
         float midSpeed = flickerSpeed / 2;
         while (true)
-        {            
-            for (float i = 0; i < midSpeed; i += Time.deltaTime)
+        {
+            float random = Random.Range(minRandomRange, maxRandomRange);
+            for (float i = 0; i < midSpeed + random; i += Time.deltaTime)
             {
-                flameLight.intensity = Mathf.Lerp(maxFireBrightness, minFireBrightness, i / midSpeed);
+                flameLight.intensity = Mathf.Lerp(maxFireBrightness, minFireBrightness, i / (midSpeed + random));
                 yield return new WaitForEndOfFrame();
             }
+
+            random = Random.Range(minRandomRange, maxRandomRange);
             flameLight.intensity = minFireBrightness;
-            for (float i = 0; i < midSpeed; i += Time.deltaTime)
+            for (float i = 0; i < midSpeed + random; i += Time.deltaTime)
             {
-                flameLight.intensity = Mathf.Lerp(minFireBrightness, maxFireBrightness, i / midSpeed);
+                flameLight.intensity = Mathf.Lerp(minFireBrightness, maxFireBrightness, i / (midSpeed + random));
                 yield return new WaitForEndOfFrame();
             }
         }

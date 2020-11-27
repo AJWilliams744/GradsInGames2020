@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Game_Manager))]
-public class Dimension45 : MonoBehaviour, Dimension
+public class DarkDimension : MonoBehaviour, Dimension
 {
     [SerializeField] private CheckPointSystem checkPointSystem;
     private Game_Manager gm;
@@ -17,4 +17,10 @@ public class Dimension45 : MonoBehaviour, Dimension
     {
         gm.TeleportPlayer(checkPointSystem.GetCurrentCheckLocation());
     }
+
+    public void ChoiceSelected(int choiceNumber)
+    {
+        print("CHOICE SELCTED" + choiceNumber);
+    }
+
 }

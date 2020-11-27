@@ -22,6 +22,7 @@ public class Player_Manager : MonoBehaviour
 
     public void EnablePlayer()
     {
+        print("MOVE");
         UpdateAllScripts(true);
     }
 
@@ -33,12 +34,12 @@ public class Player_Manager : MonoBehaviour
         }
     }
 
-    public void MoveToLaptop(Transform lookAtTransform)
+    public void MoveToLocation(Transform lookAtTransform, float speed)
     {
-        StartCoroutine(MoveOverTime(lookAtTransform.position,lookAtTransform.rotation, 2f));
+        StartCoroutine(MoveOverTime(lookAtTransform.position, speed));
     }
 
-    private IEnumerator MoveOverTime(Vector3 newPos, Quaternion newRot, float time) //TODO - Work out to rotate quaternion correctly
+    private IEnumerator MoveOverTime(Vector3 newPos, float time) //TODO - Work out to rotate quaternion correctly
     {
         Vector3 originalPos = transform.position;       
 

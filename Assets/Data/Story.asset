@@ -14,44 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _beats:
   - _choices:
-    - _text: Beat With Speed
+    - _text: Many small lights
       _beatId: 2
-    - _text: Beat with Brains
+    - _text: One Large Light
       _beatId: 3
-    - _text: Run Away (Quit)
-      _beatId: 4
-    _text: 'I''ve given them the slip for now. Intresting choice you made coming
-      here.
-
-      The alarm will trigger if you stay here too long, so try to move
-      on quickly.
-
-
-      There are 2 ways to progress, 3 is you count running away.
-
-
-
-
-'
+    - _text: Freedom (Quit to menu)
+      _beatId: 3
+    _text: "Looks like the laptop is unaffected by the effects of this dimension.\nI'll
+      keep it short, I need you to turn on a switch at the end of the dimension.
+      \n\nI can only gift you one thing so choose wisley. \n\n\n\n"
     _id: 1
     _Instruction:
       _Instruction: 2
       _Locations: 1
       _ChoiceTriggers: 0
   - _choices: []
-    _text: New Story Beat
+    _text: Enjoy this gift, it wont be the last.  Use left click to use, right click
+      to clear.
     _id: 2
     _Instruction:
       _Instruction: 1
       _Locations: 1
       _ChoiceTriggers: 0
-  - _choices: []
-    _text: New Story Beat
-    _id: 3
-    _Instruction:
-      _Instruction: 1
-      _Locations: 1
-      _ChoiceTriggers: 1
   - _choices: []
     _text: Try to remember how to get back here, lets see if I can hide till then.
     _id: 4
@@ -59,3 +43,11 @@ MonoBehaviour:
       _Instruction: 0
       _Locations: 0
       _ChoiceTriggers: 0
+  - _choices: []
+    _text: Enjoy this gift, it wont be the last.  Use left click to use, right click
+      to clear.
+    _id: 3
+    _Instruction:
+      _Instruction: 1
+      _Locations: 1
+      _ChoiceTriggers: 1
