@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _beats:
   - _choices:
-    - _text: Travel to Dimension 45
+    - _text: Travel to the Dark Dimension
       _beatId: 2
     - _text: Travel to Dimension Blue
       _beatId: 3
@@ -27,7 +27,7 @@ MonoBehaviour:
       _Locations: 0
       _ChoiceTriggers: 0
   - _choices: []
-    _text: 'Hold on, Traveling to Dimension 45
+    _text: 'Hold on, Traveling to the Dark Dimension
 
 
       Good Luck...'

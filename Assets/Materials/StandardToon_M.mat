@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - LightingRamp:
-        m_Texture: {fileID: 2800000, guid: 0b2bdc5dfb9ec2041b248cb22907ea74, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9d451ff1e3a75c7429a6ae4d9cc07410, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
