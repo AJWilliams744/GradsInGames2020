@@ -1954,6 +1954,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1093193822088973372, guid: 2f1f414ac0a3e4840a9fd308c6d29e5e, type: 3}
+      propertyPath: MusicTracks.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3e85253fc22d0a54d8323cb978add0d1, type: 3}
+    - target: {fileID: 1093193822088973372, guid: 2f1f414ac0a3e4840a9fd308c6d29e5e, type: 3}
+      propertyPath: MusicTracks.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 297ce8b206e70df4a969fededd40c6bb, type: 3}
     - target: {fileID: 2656867652956270923, guid: 2f1f414ac0a3e4840a9fd308c6d29e5e, type: 3}
       propertyPath: m_Name
       value: Sound
