@@ -11,9 +11,9 @@ public interface Dimension
     void ChoiceSelected(int choiceNumber);
 }
 
-public interface PlayerWeapon // TO-DO finish weapon interface
+public interface PlayerItem // TO-DO finish weapon interface
 {
-    void Fire();
+    void MainFire();
 
-    float GetFireCooldown();
+    void SecondaryFire();
 }

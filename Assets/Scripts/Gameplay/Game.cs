@@ -20,7 +20,12 @@ public class Game : MonoBehaviour
         _currentBeat = null;
         _wait = new WaitForSeconds(0.5f);
 
-        gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Game_Manager>();
+        GameObject tempGM = GameObject.FindGameObjectWithTag("GameManager");
+        
+        if(tempGM != null)
+        {
+            gm = tempGM.GetComponent<Game_Manager>();
+        }
     }
 
     private void Update()

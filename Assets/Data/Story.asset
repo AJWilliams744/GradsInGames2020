@@ -14,23 +14,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _beats:
   - _choices:
-    - _text: Many small lights
+    - _text: Accept the Gift
       _beatId: 2
-    - _text: One Large Light
+    - _text: Reject the Gift
       _beatId: 3
     - _text: Freedom (Quit to menu)
       _beatId: 3
-    _text: "Looks like the laptop is unaffected by the effects of this dimension.\nI'll
-      keep it short, I need you to turn on a switch at the end of the dimension.
-      \n\nI can only gift you one thing so choose wisley. \n\n\n\n"
+    _text: 'Looks like the laptop is unaffected by the effects of this dimension.
+
+      I''ll
+      keep it short, I need you to turn on a switch at the end of the dimension,
+      we don''t have enough power to move on.
+
+
+      I can only gift you a lighter
+      so I hope you will help me.
+
+
+
+
+'
     _id: 1
     _Instruction:
       _Instruction: 2
       _Locations: 1
       _ChoiceTriggers: 0
   - _choices: []
-    _text: Enjoy this gift, it wont be the last.  Use left click to use, right click
-      to clear.
+    _text: Enjoy this gift, it wont be the last.  Use the left click to turn on,
+      right click to focus.
     _id: 2
     _Instruction:
       _Instruction: 1
@@ -44,8 +55,7 @@ MonoBehaviour:
       _Locations: 0
       _ChoiceTriggers: 0
   - _choices: []
-    _text: Enjoy this gift, it wont be the last.  Use left click to use, right click
-      to clear.
+    _text: Oh I see, well good luck.
     _id: 3
     _Instruction:
       _Instruction: 1

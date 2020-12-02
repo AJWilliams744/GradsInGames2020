@@ -10,7 +10,6 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private float PlayerReach;
 
     private Interactable interact;
-    private bool InteractOnScreen;
     private RaycastHit hit;
 
     private Game_Manager gameManager;
@@ -20,7 +19,7 @@ public class PlayerInteract : MonoBehaviour
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Game_Manager>();
     }
 
-    // Update is called once per frame
+    // Check to see if interactable object is infront of player
     void FixedUpdate()
     {
         gameManager.SetUIInteractScreen(false);
