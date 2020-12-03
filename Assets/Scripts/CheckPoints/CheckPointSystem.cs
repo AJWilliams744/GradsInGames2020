@@ -19,7 +19,10 @@ public class CheckPointSystem : MonoBehaviour
 
     public void TriggerNextPoint()
     {
+        if(currentCheckPoint + 1 > checkPoints.Length - 1) { return; }
 
+        currentCheckPoint++;
+        
     }
 
 }

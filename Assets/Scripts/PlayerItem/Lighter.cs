@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Lighter : MonoBehaviour , PlayerItem
 {
-    private bool isFireOn = true;
+    private bool isFireOn = false;
     [SerializeField] private GameObject fire;
     [SerializeField] private GameObject baseLight;
 
@@ -39,5 +39,10 @@ public class Lighter : MonoBehaviour , PlayerItem
         isFocusOn = !isFocusOn;
         fireLight.SetActive(!isFocusOn);
         focusLight.SetActive(isFocusOn);
+    }
+
+    private void Start()
+    {
+        
     }
 }

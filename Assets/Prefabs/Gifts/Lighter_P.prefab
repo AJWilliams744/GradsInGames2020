@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 2939451118977335356}
   - component: {fileID: 2635754052485963404}
   m_Layer: 15
-  m_Name: Lighter 1
+  m_Name: Lighter
   m_TagString: PlayerItemGift
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -575,7 +575,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &806342972081107823
 Transform:
   m_ObjectHideFlags: 0
@@ -5644,7 +5644,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1512788659279679354
 Transform:
   m_ObjectHideFlags: 0

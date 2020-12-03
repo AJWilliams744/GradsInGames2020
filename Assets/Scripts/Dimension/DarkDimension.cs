@@ -7,7 +7,7 @@ public class DarkDimension : BaseDimension, Dimension
 {
     [SerializeField] private CheckPointSystem checkPointSystem;
 
-    [SerializeField] private GameObject zone2;
+    [SerializeField] private GameObject GameArea;
     [SerializeField] private Light globalLight;
 
     [SerializeField] private float startFadeTime = 2;
@@ -16,6 +16,11 @@ public class DarkDimension : BaseDimension, Dimension
     public void PlayerDead()
     {
         gm.TeleportPlayer(checkPointSystem.GetCurrentCheckLocation());
+    }
+
+    public void NextCheckPoint()
+    {
+        checkPointSystem.TriggerNextPoint();
     }
 
     public void ChoiceSelected(GiftChoices choice)
@@ -38,13 +43,13 @@ public class DarkDimension : BaseDimension, Dimension
                 break;
         }
 
-        zone2.SetActive(true);
+        GameArea.SetActive(true);
         StartCoroutine(FadeGlobalLight(1, 0, endFadeTime));
     }
 
     private void Start()
     {
-        //zone2.SetActive(false);
+        GameArea.SetActive(false);
         StartCoroutine(FadeGlobalLight(0, 1, startFadeTime));
     }
 

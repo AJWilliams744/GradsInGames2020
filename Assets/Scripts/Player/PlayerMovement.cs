@@ -49,6 +49,8 @@ public class PlayerMovement : MonoBehaviour
 
         controller.transform.position = newLocation.position;
 
+        gameObject.transform.rotation = newLocation.rotation;
+
         controller.enabled = true; 
         
     }
