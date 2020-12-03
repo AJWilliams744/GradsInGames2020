@@ -22,7 +22,6 @@ public class Player_Manager : MonoBehaviour
 
     public void EnablePlayer()
     {
-        print("MOVE");
         UpdateAllScripts(true);
     }
 

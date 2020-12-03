@@ -42,12 +42,15 @@ public class Game_Manager : MonoBehaviour
 
     public void EndLaptopInteract()
     {
-        methodPasser methodToCall = EnablePlayer;
-        if(laptopReturnTransform != null)
+        methodPasser[] methodsToCall = new methodPasser[2];
+
+        methodsToCall[0] = EnablePlayer;
+        methodsToCall[1] = SwitchOffLaptop;
+
+        if (laptopReturnTransform != null)
         {
-            StartCoroutine(WaitToTrigger(methodToCall, laptopMoveSpeed));
+            StartCoroutine(WaitToTrigger(methodsToCall, laptopMoveSpeed));
             playerManager.MoveToLocation(laptopReturnTransform, laptopMoveSpeed);
-            laptop.SetActive(false);
         }
     }
 
@@ -61,9 +64,9 @@ public class Game_Manager : MonoBehaviour
         playerManager.TeleportPlayer(newLocation);
     }
 
-    public void ChoiceSelected(int choiceNumber)
+    public void ChoiceSelected(GiftChoices choice)
     {
-        dimensionInterface.ChoiceSelected(choiceNumber);
+        dimensionInterface.ChoiceSelected(choice);
     }
 
     private void DisablePlayer()
@@ -74,17 +77,28 @@ public class Game_Manager : MonoBehaviour
 
     private void EnablePlayer()
     {
-        print("ENABLE");
         playerManager.EnablePlayer();
         UIManager.SetInteractOnScreen(true);
     }
 
-    private IEnumerator WaitToTrigger(methodPasser methodToCall, float time)
+    private void SwitchOffLaptop()
+    {
+        Destroy(laptop.GetComponent<LaptopInteract>());
+    }
+
+    private IEnumerator WaitToTrigger(methodPasser[] methodsToCall, float time)
     {       
         yield return new WaitForSeconds(time);
-        print("CALLED");
-        methodToCall();
+
+        foreach(methodPasser method in methodsToCall)
+        {
+            method?.Invoke(); // If not null
+        }
+
+       // methodToCall();
     }
+
+
 
    
 }

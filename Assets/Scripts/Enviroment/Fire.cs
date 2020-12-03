@@ -11,6 +11,8 @@ public class Fire : MonoBehaviour
     [SerializeField] private float minRandomRange = 0;
     [SerializeField] private float maxRandomRange = 1;
 
+    [SerializeField] private float flameOffTime = 0;
+
     [SerializeField] private Light flameLight;
 
     private void Start()
@@ -25,15 +27,18 @@ public class Fire : MonoBehaviour
 
     private IEnumerator Flicker()
     {
-        float midSpeed = flickerSpeed / 2;
+ 
         while (true)
         {
+            float midSpeed = flickerSpeed / 2;
             float random = Random.Range(minRandomRange, maxRandomRange);
             for (float i = 0; i < midSpeed + random; i += Time.deltaTime)
             {
                 flameLight.intensity = Mathf.Lerp(maxFireBrightness, minFireBrightness, i / (midSpeed + random));
                 yield return new WaitForEndOfFrame();
             }
+
+            yield return new WaitForSeconds(flameOffTime);
 
             random = Random.Range(minRandomRange, maxRandomRange);
             flameLight.intensity = minFireBrightness;

@@ -17,12 +17,6 @@ public class LaptopInteract : MonoBehaviour, Interactable
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Interact()
     {
         gameManager.StartLaptopInteract(playerLookTransform, playerReturnTransform);

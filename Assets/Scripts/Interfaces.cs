@@ -8,7 +8,7 @@ public interface Interactable
 public interface Dimension
 {
     void PlayerDead();
-    void ChoiceSelected(int choiceNumber);
+    void ChoiceSelected(GiftChoices choice);
 }
 
 public interface PlayerItem // TO-DO finish weapon interface

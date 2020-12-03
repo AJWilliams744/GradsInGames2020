@@ -8,6 +8,8 @@ public class PlayerItem_Manager : MonoBehaviour
     [SerializeField] private MonoBehaviour startingPlayerItem;
     private PlayerItem playerItem;
 
+    [SerializeField] private GameObject HandJointLocation;
+
     private void Start()
     {
         if(startingPlayerItem != null)
@@ -22,7 +24,6 @@ public class PlayerItem_Manager : MonoBehaviour
             }
             
         }
-        
     }
     public void ItemMainFire()
     {
@@ -43,6 +44,24 @@ public class PlayerItem_Manager : MonoBehaviour
     public void SetPlayerItem(PlayerItem newItem)
     {
         playerItem = newItem;
+       
+    }
+
+    private void RemoveCurrentItem()
+    {
+        foreach(Transform child in HandJointLocation.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        playerItem = null;
+    }
+
+    public void AddItem(GameObject prefab)
+    {
+        RemoveCurrentItem();
+        GameObject clone = Instantiate(prefab, HandJointLocation.transform);
+        playerItem = clone.GetComponent<PlayerItem>();
+
     }
 
 }

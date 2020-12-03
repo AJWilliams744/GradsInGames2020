@@ -5,4 +5,4 @@ using UnityEngine;
 public enum TravelInstructions { Travel, ActivateChoice, Nothing}
 public enum TravelLocations { Home, DarkDimension, DimensionBlue}
 
-public enum WorldChoiceTriggers { Choice1, Choice2, Choice3, Choice4}
+public enum GiftChoices { Take, Leave }

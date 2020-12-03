@@ -38,7 +38,7 @@ MonoBehaviour:
     _Instruction:
       _Instruction: 2
       _Locations: 1
-      _ChoiceTriggers: 0
+      _GiftChoices: 0
   - _choices: []
     _text: Enjoy this gift, it wont be the last.  Use the left click to turn on,
       right click to focus.
@@ -46,18 +46,18 @@ MonoBehaviour:
     _Instruction:
       _Instruction: 1
       _Locations: 1
-      _ChoiceTriggers: 0
+      _GiftChoices: 0
   - _choices: []
     _text: Try to remember how to get back here, lets see if I can hide till then.
     _id: 4
     _Instruction:
       _Instruction: 0
       _Locations: 0
-      _ChoiceTriggers: 0
+      _GiftChoices: 0
   - _choices: []
-    _text: Oh I see, well good luck.
+    _text: I like your confidence, show me what you can do
     _id: 3
     _Instruction:
       _Instruction: 1
       _Locations: 1
-      _ChoiceTriggers: 1
+      _GiftChoices: 1

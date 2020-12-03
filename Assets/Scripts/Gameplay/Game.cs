@@ -139,7 +139,7 @@ public class Game : MonoBehaviour
         {
             if(gm != null)
             {
-                gm.ChoiceSelected((int)currentInstruction.ChoiceTriggers);
+                gm.ChoiceSelected(currentInstruction.ChoiceTriggers);
                 LeaveLaptop();
             }
         }
