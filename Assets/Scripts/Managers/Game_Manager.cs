@@ -9,6 +9,7 @@ public class Game_Manager : MonoBehaviour
     private UI_Manager UIManager;
     [SerializeField] private Game game;
     [SerializeField] private Player_Manager playerManager;
+    [SerializeField] private MusicManager musicManager;
     [SerializeField] private GameObject laptop;
 
     private Dimension dimensionInterface;
@@ -52,6 +53,8 @@ public class Game_Manager : MonoBehaviour
             StartCoroutine(WaitToTrigger(methodsToCall, laptopMoveSpeed));
             playerManager.MoveToLocation(laptopReturnTransform, laptopMoveSpeed);
         }
+
+        musicManager.NextSong();
     }
 
     public void PlayerDead()

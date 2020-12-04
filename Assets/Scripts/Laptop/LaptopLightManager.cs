@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class LaptopLightManager : MonoBehaviour
 {
-    [SerializeField] private GameObject light;
+    [SerializeField] private GameObject laptopLight;
 
     public void SwitchOffLight()
     {
-        light.SetActive(false);
+        laptopLight.SetActive(false);
     }
 
     public void SwitchOnLight()
     {
-        light.SetActive(true);
+        laptopLight.SetActive(true);
 
     }
 }

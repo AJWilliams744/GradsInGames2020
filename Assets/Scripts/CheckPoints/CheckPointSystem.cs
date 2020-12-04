@@ -5,7 +5,7 @@ using UnityEngine;
 public class CheckPointSystem : MonoBehaviour
 {
     [SerializeField] private Transform[] checkPoints;
-    private int currentCheckPoint = 0;
+    [SerializeField] private int currentCheckPoint = 0;
     
     public Transform GetCurrentCheckLocation()
     {

@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3723231723518946178
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 36405603594869969, guid: 2be2857165310a443a8cc2057b83d36e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 36405603594869969, guid: 2be2857165310a443a8cc2057b83d36e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4893646
+      objectReference: {fileID: 0}
+    - target: {fileID: 36405603594869969, guid: 2be2857165310a443a8cc2057b83d36e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 389.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 36405603594869969, guid: 2be2857165310a443a8cc2057b83d36e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 36405603594869969, guid: 2be2857165310a443a8cc2057b83d36e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 36405603594869969, guid: 2be2857165310a443a8cc2057b83d36e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 36405603594869969, guid: 2be2857165310a443a8cc2057b83d36e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 36405603594869969, guid: 2be2857165310a443a8cc2057b83d36e, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 36405603594869969, guid: 2be2857165310a443a8cc2057b83d36e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 36405603594869969, guid: 2be2857165310a443a8cc2057b83d36e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 36405603594869969, guid: 2be2857165310a443a8cc2057b83d36e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5103514964360888592, guid: 2be2857165310a443a8cc2057b83d36e, type: 3}
+      propertyPath: m_Name
+      value: FireObject_P
+      objectReference: {fileID: 0}
+    - target: {fileID: 5446716388288077576, guid: 2be2857165310a443a8cc2057b83d36e, type: 3}
+      propertyPath: maxFireBrightness
+      value: 300
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2be2857165310a443a8cc2057b83d36e, type: 3}
