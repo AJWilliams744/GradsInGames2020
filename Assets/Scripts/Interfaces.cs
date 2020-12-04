@@ -11,6 +11,10 @@ public interface Dimension
     void ChoiceSelected(GiftChoices choice);
 
     void NextCheckPoint();
+    void SwitchTriggered(string name);
+
+    void RemoveGift();
+
 }
 
 public interface PlayerItem // TO-DO finish weapon interface

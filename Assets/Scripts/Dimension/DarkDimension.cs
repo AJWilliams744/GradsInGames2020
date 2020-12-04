@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Game_Manager))]
 public class DarkDimension : BaseDimension, Dimension
@@ -63,6 +64,23 @@ public class DarkDimension : BaseDimension, Dimension
         }
         globalLight.intensity = endIntensity;
 
+    }
+
+    public void SwitchTriggered(string name)
+    {
+        methodPasser[] methods = new methodPasser[1];
+        methods[0] = LoadNextScene;
+
+        StartCoroutine(WaitToTrigger(methods, 6));
+    }
+
+    
+
+    private void LoadNextScene()
+    {
+        print("loading");
+        PlayerPrefs.SetInt("Scene", SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("LoadingScene");
     }
 
 }

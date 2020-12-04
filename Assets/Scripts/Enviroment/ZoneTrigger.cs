@@ -6,12 +6,14 @@ using UnityEngine;
 public class ZoneTrigger : MonoBehaviour
 {
     [Tooltip("Leave blank if no previous zone")]
-    [SerializeField] GameObject previousZone;
+    [SerializeField] private GameObject previousZone;   
     
-    [SerializeField] AudioSource zoneAppearSource;
+    [SerializeField] private AudioSource zoneAppearSource;
     [SerializeField] private GameObject[] stages;
     [SerializeField] private bool isDelayed = false;
     [SerializeField] private float delayTimmer = 1f;
+
+    [SerializeField] private bool removeGift = false;
 
     private bool triggered = false;
 
@@ -22,12 +24,15 @@ public class ZoneTrigger : MonoBehaviour
 
         if (triggered) { return; }
 
+        if (removeGift) { currentDimension.RemoveGift(); }
+
         triggered = true;
 
         if(previousZone != null)
         {
             previousZone.SetActive(false);
         }
+
         currentDimension.NextCheckPoint();
 
         if (isDelayed)

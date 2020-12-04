@@ -101,7 +101,10 @@ public class Game_Manager : MonoBehaviour
        // methodToCall();
     }
 
-
+    public void SwitchTriggered(string name)
+    {
+        dimensionInterface.SwitchTriggered(name);
+    }
 
    
 }

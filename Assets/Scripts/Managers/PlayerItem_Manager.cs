@@ -64,4 +64,10 @@ public class PlayerItem_Manager : MonoBehaviour
 
     }
 
+    public void RemoveGift()
+    {
+        playerItem = null;
+        RemoveCurrentItem();
+    }
+
 }
