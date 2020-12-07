@@ -2082,7 +2082,7 @@ PrefabInstance:
       objectReference: {fileID: 1053171448}
     - target: {fileID: 2853826228454555013, guid: b1bb3949fda19d34fb9a711f3eaea7ee, type: 3}
       propertyPath: fastText
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3315626109452883484, guid: b1bb3949fda19d34fb9a711f3eaea7ee, type: 3}
       propertyPath: m_Name

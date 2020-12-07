@@ -25,6 +25,10 @@ public class Game_Manager : MonoBehaviour
     {
         UIManager = GetComponent<UI_Manager>();
         dimensionInterface = GetComponent(typeof(Dimension)) as Dimension;
+
+       // dimensionInterface.NormalStart();
+
+       dimensionInterface.LoadProgress();
        // game = GetComponent<Game>();
     }
 

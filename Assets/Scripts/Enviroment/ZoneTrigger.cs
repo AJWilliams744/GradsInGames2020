@@ -21,19 +21,38 @@ public class ZoneTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        LoudTrigger(true);       
+    }
 
+    public void LoadTrigger()
+    {
+        bool orignial = isDelayed;
+        float originalSound = zoneAppearSource.volume;
+
+        isDelayed = false;
+        zoneAppearSource.volume = 0;
+
+        LoudTrigger(false);
+
+        isDelayed = orignial;
+        zoneAppearSource.volume = originalSound;
+
+    }
+
+    public void LoudTrigger(bool addCheckpoint)
+    {
         if (triggered) { return; }
 
         if (removeGift) { currentDimension.RemoveGift(); }
 
         triggered = true;
 
-        if(previousZone != null)
+        if (previousZone != null)
         {
             previousZone.SetActive(false);
         }
 
-        currentDimension.NextCheckPoint();
+        if (addCheckpoint) { currentDimension.NextCheckPoint(); }
 
         if (isDelayed)
         {
@@ -41,7 +60,7 @@ public class ZoneTrigger : MonoBehaviour
         }
         else
         {
-            foreach(GameObject gm in stages)
+            foreach (GameObject gm in stages)
             {
                 gm.SetActive(true);
                 zoneAppearSource.PlayOneShot(zoneAppearSource.clip);

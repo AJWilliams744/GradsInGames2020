@@ -12,9 +12,17 @@ public class CheckPointSystem : MonoBehaviour
         return checkPoints[currentCheckPoint];
     }
 
-    public void ResetProgress()
+    public int GetCurrentInt()
     {
+        return currentCheckPoint;
+    }
 
+    public void SetProgress(int newCheckPoint)
+    {
+        if(newCheckPoint < checkPoints.Length & newCheckPoint > -1)
+        {
+            currentCheckPoint = newCheckPoint;
+        }
     }
 
     public void TriggerNextPoint()

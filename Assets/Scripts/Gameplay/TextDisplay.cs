@@ -4,7 +4,6 @@ using TMPro;
 
 public class TextDisplay : MonoBehaviour
 {
-    [SerializeField] private bool fastText;
     [SerializeField] private LaptopAudioManager laptopAudio;
     [SerializeField] private LaptopLightManager laptopLight;
     public enum State { Initialising, Idle, Busy }
@@ -15,21 +14,19 @@ public class TextDisplay : MonoBehaviour
     private WaitForSeconds _longWait;
     private State _state = State.Initialising;
 
+    private WaitForSeconds textSlowSpeed = new WaitForSeconds(0.05f);
+    private WaitForSeconds textFastSpeed = new WaitForSeconds(0.02f);
+
     public bool IsIdle { get { return _state == State.Idle; } }
     public bool IsBusy { get { return _state != State.Idle; } }
 
     private void Awake()
     {
-        _displayText = GetComponent<TMP_Text>();
-        if (fastText)
-        {
-            _shortWait = new WaitForSeconds(0.01f);
-        }
-        else
-        {
-            _shortWait = new WaitForSeconds(0.1f);
-        }
-         
+
+        _displayText = gameObject.GetComponent<TMP_Text>();
+
+        _shortWait = textSlowSpeed;
+        
         _longWait = new WaitForSeconds(1.0f); //Original 0.8f
 
         _displayText.text = string.Empty;
@@ -44,8 +41,19 @@ public class TextDisplay : MonoBehaviour
         int currentLetter = 0;
         char[] charArray = text.ToCharArray();
 
+        
+
         while (currentLetter < charArray.Length)
         {
+            if (Input.GetButton("MainFire"))
+            {
+                _shortWait = textFastSpeed;
+            }
+            else
+            {
+                _shortWait = textSlowSpeed;
+            }
+
             _displayText.text += charArray[currentLetter++];
             yield return _shortWait;
         }

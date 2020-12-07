@@ -14,18 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _beats:
   - _choices:
-    - _text: Travel to the Dark Dimension
+    - _text: Help me
       _beatId: 2
-    - _text: Travel to Dimension Blue
+    - _text: Run back to the menu
       _beatId: 3
-    _text: "Good, there seems to be power in the air here. Looks like we can talk.\nI'll
-      try to guide you on your journey but there's only so much I can do from here.
-      \nI can't stay too long as they'll find me, so you've got a choice to make.\n"
+    _text: "Good, you're finally here. Looks like we can talk.\nI'll try to help
+      you on your journey but there's only so much I can do from here. \nI can't
+      stay too long as they'll find me, so you've got a choice to make.\n"
     _id: 1
     _Instruction:
       _Instruction: 2
       _Locations: 0
-      _ChoiceTriggers: 0
+      _GiftChoices: 0
   - _choices: []
     _text: 'Hold on, Traveling to the Dark Dimension
 
@@ -35,11 +35,11 @@ MonoBehaviour:
     _Instruction:
       _Instruction: 0
       _Locations: 1
-      _ChoiceTriggers: 0
+      _GiftChoices: 0
   - _choices: []
-    _text: "Hold on, Traveling to Dimension Blue \n\nGood Luck..."
+    _text: Hold on, Traveling to Main Menu
     _id: 3
     _Instruction:
       _Instruction: 0
-      _Locations: 2
-      _ChoiceTriggers: 0
+      _Locations: 0
+      _GiftChoices: 0

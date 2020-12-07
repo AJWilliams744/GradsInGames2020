@@ -10,10 +10,16 @@ public interface Dimension
     void PlayerDead();
     void ChoiceSelected(GiftChoices choice);
 
+    void LoadProgress();
+
     void NextCheckPoint();
     void SwitchTriggered(string name);
 
     void RemoveGift();
+
+    void NormalStart();
+
+    string GetDimensionName();
 
 }
 

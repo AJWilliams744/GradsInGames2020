@@ -14,6 +14,8 @@ public class DarkDimension : BaseDimension, Dimension
     [SerializeField] private float startFadeTime = 2;
     [SerializeField] private float endFadeTime = 10;
 
+    [SerializeField] private ZoneManager zoneManager;
+
     public void PlayerDead()
     {
         gm.TeleportPlayer(checkPointSystem.GetCurrentCheckLocation());
@@ -48,12 +50,6 @@ public class DarkDimension : BaseDimension, Dimension
         StartCoroutine(FadeGlobalLight(1, 0, endFadeTime));
     }
 
-    private void Start()
-    {
-        GameArea.SetActive(false);
-        StartCoroutine(FadeGlobalLight(0, 1, startFadeTime));
-    }
-
     private IEnumerator FadeGlobalLight(float startIntensity, float endIntensity,float time)
     {
         globalLight.intensity = startIntensity;
@@ -74,13 +70,35 @@ public class DarkDimension : BaseDimension, Dimension
         StartCoroutine(WaitToTrigger(methods, 6));
     }
 
-    
-
-    private void LoadNextScene()
+    public void NormalStart()
     {
-        print("loading");
-        PlayerPrefs.SetInt("Scene", SceneManager.GetActiveScene().buildIndex + 1);
-        SceneManager.LoadScene("LoadingScene");
+        GameArea.SetActive(false);
+        StartCoroutine(FadeGlobalLight(0, 1, startFadeTime));
+    }
+
+    public void LoadProgress()
+    {
+        DimensionStorage dimensionSave = GameSave_Manager.LoadDimension(dimensionName);
+
+        if(dimensionSave == null) { NormalStart(); return; }
+
+        if(dimensionSave.currentCheckPoint == 0) { NormalStart(); return; } // Ignore origin check point (Has no zone)
+
+        if (dimensionSave.hasGift) { GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerItem_Manager>().AddItem(giftPrefab); }
+
+        GameArea.SetActive(true);
+        zoneManager.TriggerZones(dimensionSave.currentCheckPoint); 
+        PlayerDead();
+
+        checkPointSystem.SetProgress(checkPointSystem.GetCurrentInt() - 1);
+    }
+
+    private void SaveDimension() //TO-DO Complete This
+    {
+        GameSave_Manager.CreateDimensionSaveGameObject(checkPointSystem.GetCurrentInt(),
+                                                       notes,
+                                                       isLevelCompleted,
+                                                       hasGift);
     }
 
 }
