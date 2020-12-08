@@ -10,10 +10,17 @@ using UnityEditor;
 public class StoryData : ScriptableObject
 {
     [SerializeField] private List<BeatData> _beats;
+
+    [SerializeField] private List<Note> _notes;
  
     public BeatData GetBeatById( int id )
     {
         return _beats.Find(b => b.ID == id);
+    }
+
+    public List<Note> GetNotes()
+    {
+        return _notes;
     }
 
 #if UNITY_EDITOR

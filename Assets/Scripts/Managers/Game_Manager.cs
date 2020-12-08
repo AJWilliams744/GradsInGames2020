@@ -28,8 +28,10 @@ public class Game_Manager : MonoBehaviour
 
        // dimensionInterface.NormalStart();
 
-       dimensionInterface.LoadProgress();
-       // game = GetComponent<Game>();
+        dimensionInterface.LoadProgress();
+
+        CreateNotes();
+        // game = GetComponent<Game>();
     }
 
     public void SetUIInteractScreen(bool value)
@@ -59,6 +61,7 @@ public class Game_Manager : MonoBehaviour
         }
 
         musicManager.NextSong();
+        //CreateNotes();
     }
 
     public void PlayerDead()
@@ -109,6 +112,69 @@ public class Game_Manager : MonoBehaviour
     {
         dimensionInterface.SwitchTriggered(name);
     }
+
+    public void FoundNote(Note note)
+    {
+        dimensionInterface.FoundNote(note);
+    }
+
+    public void CreateNotes()
+    {
+        List<Note> notes = CreateNoteListCopy(game.GetNotes()); //Dont effect the base data, otherwise reset wont reset notes
+
+        dimensionInterface.LinkNotes(notes);
+
+        GameObject[] noteLocations = GameObject.FindGameObjectsWithTag("NoteLocation");
+        NoteInteract[] noteInteracts = new NoteInteract[noteLocations.Length];
+
+        foreach(GameObject obj in noteLocations)
+        {
+            NoteInteract noteInteract = obj.GetComponent<NoteInteract>();
+
+            if(noteInteract.GetNoteId() < 0 || noteInteract.GetNoteId() > noteLocations.Length - 1)
+            {
+                Debug.LogError("Note ID miss match");
+            }
+            else
+            {
+                noteInteracts[noteInteract.GetNoteId()] = noteInteract;
+            }
+           
+        }
+
+        foreach(Note nt in notes)
+        {
+            if(nt.ID > noteInteracts.Length - 1)
+            {
+                Debug.LogError("Note ID miss match");
+            }else
+            {
+                noteInteracts[nt.ID].SetNote(nt);
+               // nt.Title = "AAAAAAAAAAAAA"; Linking Test to see if old data changes
+            }
+          
+        }
+    }
+
+    private List<Note> CreateNoteListCopy(List<Note> _notes)
+    {
+        List<Note> newNotes = new List<Note>();
+
+        foreach(Note nt in _notes)
+        {
+            Note newNote = new Note();
+            newNote.ID = nt.ID;
+            newNote.Title = nt.Title;
+            newNote.Collected = nt.Collected;
+            newNote.Contents = nt.Contents;
+
+            newNotes.Add(newNote);
+        }
+
+        return newNotes;
+    }
+
+
 
    
 }

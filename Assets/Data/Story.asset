@@ -61,3 +61,12 @@ MonoBehaviour:
       _Instruction: 1
       _Locations: 1
       _GiftChoices: 1
+  _notes:
+  - _iD: 0
+    _collected: 0
+    _title: Note 1
+    _contents: asadasd
+  - _iD: 1
+    _collected: 0
+    _title: Note 2
+    _contents: asdasdadssa

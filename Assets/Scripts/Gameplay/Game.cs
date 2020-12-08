@@ -2,6 +2,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.Rendering;
+using System.Collections.Generic;
 
 public class Game : MonoBehaviour
 {
@@ -149,5 +150,10 @@ public class Game : MonoBehaviour
     private void LeaveLaptop()
     {
         gm.EndLaptopInteract();
+    }
+
+    public List<Note> GetNotes()
+    {
+        return _data.GetNotes();
     }
 }

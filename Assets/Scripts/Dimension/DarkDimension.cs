@@ -95,10 +95,8 @@ public class DarkDimension : BaseDimension, Dimension
 
     private void SaveDimension() //TO-DO Complete This
     {
-        GameSave_Manager.CreateDimensionSaveGameObject(checkPointSystem.GetCurrentInt(),
-                                                       notes,
-                                                       isLevelCompleted,
-                                                       hasGift);
+        DimensionStorage gameFile = GameSave_Manager.CreateDimensionSaveGameObject(checkPointSystem.GetCurrentInt(), notes, isLevelCompleted, hasGift);
+        GameSave_Manager.SaveDimension(gameFile, dimensionName);
     }
 
 }

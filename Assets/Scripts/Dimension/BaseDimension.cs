@@ -15,7 +15,7 @@ public class BaseDimension : MonoBehaviour
 
     protected bool isLevelCompleted;
     protected bool hasGift;
-    protected Note[] notes;
+    protected List<Note> notes;
 
     private void Awake()
     {
@@ -36,7 +36,6 @@ public class BaseDimension : MonoBehaviour
             method?.Invoke(); // If not null
         }
 
-        // methodToCall();
     }
 
     public void RemoveGift()
@@ -59,5 +58,23 @@ public class BaseDimension : MonoBehaviour
         }
     }
 
+    public void FoundNote(Note note)
+    {
+        foreach(Note storedNote in notes)
+        {
+            if(storedNote.ID == note.ID)
+            {
+                storedNote.Collected = true;
+
+                print(note.Title);
+                //TO-DO Save the game
+            }
+        }
+    }
+
+    public void LinkNotes(List<Note> _notes)
+    {
+        notes = _notes;
+    }
  
 }

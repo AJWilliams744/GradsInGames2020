@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Switch : MonoBehaviour, Interactable
+public class Switch : BaseInteract, Interactable
 {
     [SerializeField] Animator animClip;
     [SerializeField] AudioSource switchSource;
-    private Game_Manager gameManager;
     public void Interact()
     {
         animClip.SetTrigger("On");
@@ -14,14 +13,6 @@ public class Switch : MonoBehaviour, Interactable
         switchSource.PlayOneShot(switchSource.clip);
     }
 
-    void Start()
-    {
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Game_Manager>();
-        if (!gameManager)
-        {
-            Debug.LogError("No Game Manager in Scene");
-        }
-    }
 
 
 }

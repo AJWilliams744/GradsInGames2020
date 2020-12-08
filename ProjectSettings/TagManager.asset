@@ -8,6 +8,7 @@ TagManager:
   - KillZone
   - PlayerItemGift
   - WorldItemGift
+  - NoteLocation
   layers:
   - Default
   - TransparentFX

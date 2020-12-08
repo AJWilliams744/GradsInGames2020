@@ -6,7 +6,7 @@ using UnityEngine;
 
 public static class GameSave_Manager
 {
-    public static DimensionStorage CreateDimensionSaveGameObject(int inCurrentCheckPoint, Note[] inNotes, bool inCompleted, bool inHasGift)
+    public static DimensionStorage CreateDimensionSaveGameObject(int inCurrentCheckPoint, List<Note> inNotes, bool inCompleted, bool inHasGift)
     {
         DimensionStorage dimensionSave = new DimensionStorage();
 
@@ -52,6 +52,13 @@ public static class GameSave_Manager
         Debug.Log("Save Loaded");
 
         return dimension;
+    }
+
+    public static bool DeleteDimension(string name)
+    {
+        File.Delete(Application.persistentDataPath + "/" + name + ".dimensionSave");
+
+        return File.Exists(Application.persistentDataPath + "/" + name + ".dimensionSave");
     }
 
     //public static GlobalStorage CreateGlobalSaveGameObject(bool[] inCompletedLevels, bool[] inCollectedNotes)
@@ -107,7 +114,7 @@ public class DimensionStorage
 
     public int currentCheckPoint = 0;
 
-    public Note[] notes = null;
+    public List<Note> notes = null;
 
     public bool completed = false;
 
