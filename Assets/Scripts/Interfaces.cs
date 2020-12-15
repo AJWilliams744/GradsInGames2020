@@ -17,12 +17,10 @@ public interface Dimension
     void RemoveGift();
     void NormalStart();
     string GetDimensionName();
-
     void LinkNotes(List<Note> notes);
-
     void FoundNote(Note note);
-
     List<Note> GetNotes();
+    void ResetDimension();
 }
 
 public interface PlayerItem // TO-DO finish weapon interface

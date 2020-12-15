@@ -102,5 +102,10 @@ public class BaseDimension : MonoBehaviour
     {
         return notes;
     }
+
+    public void ResetDimension()
+    {
+        GameSave_Manager.DeleteDimension(dimensionName);
+    }
  
 }

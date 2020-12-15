@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(UI_Manager))]
 [RequireComponent(typeof(Dimension))]
@@ -189,5 +190,11 @@ public class Game_Manager : MonoBehaviour
         return dimensionInterface.GetNotes();
     }
 
-   
+    public void ResetDimension() //TO-DO Add gift choice stat
+    {
+        dimensionInterface.ResetDimension();
+        print("loading");
+        PlayerPrefs.SetInt("Scene", SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("LoadingScene");
+    }
 }

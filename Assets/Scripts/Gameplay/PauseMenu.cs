@@ -120,4 +120,9 @@ public class PauseMenu : MonoBehaviour
             Debug.LogError("No Game Manager in Scene");
         }
     }
+
+    public void ResetDimension()
+    {
+        gameManager.ResetDimension();
+    }
 }
