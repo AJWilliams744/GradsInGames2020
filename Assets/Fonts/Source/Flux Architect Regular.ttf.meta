@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 1e9cab4712ec88f479d602df4f95f02d
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Flux Architect
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 15373d7b8dac56c4fb9a415b3d7bb9cf, type: 3}
+  - {fileID: 12800000, guid: 21f6c36ef342feb428025f0ff439c637, type: 3}
+  - {fileID: 12800000, guid: 0473913f28b2a9f4a8ca5c848dbaaa95, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

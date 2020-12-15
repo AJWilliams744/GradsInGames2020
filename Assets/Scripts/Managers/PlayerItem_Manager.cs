@@ -27,7 +27,7 @@ public class PlayerItem_Manager : MonoBehaviour
     }
     public void ItemMainFire()
     {
-        if( playerItem != null)
+        if( playerItem != null && Time.deltaTime > 0)
         {
             playerItem.MainFire();
         }       
@@ -35,7 +35,7 @@ public class PlayerItem_Manager : MonoBehaviour
 
     public void ItemSecondaryFire()
     {
-        if (playerItem != null)
+        if (playerItem != null && Time.deltaTime > 0)
         {
             playerItem.SecondaryFire();
         }            

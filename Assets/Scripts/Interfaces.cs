@@ -21,6 +21,8 @@ public interface Dimension
     void LinkNotes(List<Note> notes);
 
     void FoundNote(Note note);
+
+    List<Note> GetNotes();
 }
 
 public interface PlayerItem // TO-DO finish weapon interface

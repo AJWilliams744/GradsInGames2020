@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(Game_Manager))]
 public class BaseDimension : MonoBehaviour
 {
     [SerializeField] protected string dimensionName;
@@ -20,6 +21,10 @@ public class BaseDimension : MonoBehaviour
     private void Awake()
     {
         gm = GetComponent<Game_Manager>();
+
+#if UNITY_EDITOR
+        GameSave_Manager.DeleteDimension(dimensionName);
+#endif
     }
 
     public string GetDimensionName()
@@ -52,13 +57,22 @@ public class BaseDimension : MonoBehaviour
 
     private void Update()
     {
+#if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.T))
         {
-            PauseMenu.SetActive(true);
+            PauseMenu.SetActive(!PauseMenu.activeSelf);
+           
         }
+#else
+        if (Input.GetButtonDown("Cancel"))
+        {
+            PauseMenu.SetActive(!PauseMenu.activeSelf);
+        }
+
+#endif
     }
 
-    public void FoundNote(Note note)
+    public virtual void FoundNote(Note note)
     {
         foreach(Note storedNote in notes)
         {
@@ -66,15 +80,27 @@ public class BaseDimension : MonoBehaviour
             {
                 storedNote.Collected = true;
 
-                print(note.Title);
-                //TO-DO Save the game
+                print(note.Title); 
+                //Save Game
+                
             }
         }
+    }
+
+    protected Note FindNoteByID(int id)
+    {        
+        return notes.Find(b => b.ID == id); //Taken from finding beat data in story data script
+        
     }
 
     public void LinkNotes(List<Note> _notes)
     {
         notes = _notes;
+    }
+
+    public List<Note> GetNotes()
+    {
+        return notes;
     }
  
 }

@@ -12,7 +12,7 @@ public static class GameSave_Manager
 
         dimensionSave.currentCheckPoint = inCurrentCheckPoint;
 
-        dimensionSave.notes = inNotes;
+        dimensionSave.notes = new List<Note>(inNotes);
 
         dimensionSave.completed = inCompleted;
 
@@ -61,68 +61,68 @@ public static class GameSave_Manager
         return File.Exists(Application.persistentDataPath + "/" + name + ".dimensionSave");
     }
 
-    //public static GlobalStorage CreateGlobalSaveGameObject(bool[] inCompletedLevels, bool[] inCollectedNotes)
-    //{
-    //    GlobalStorage globalSave = new GlobalStorage();
+    //    public static GlobalStorage CreateGlobalSaveGameObject(int inCurrentSceneInt, List<Note> inCollectedNotes)
+    //    {
+    //        GlobalStorage globalSave = new GlobalStorage();
 
-    //    globalSave.completedLevels = inCompletedLevels;
+    //        globalSave.currnetSceneInt = inCurrentSceneInt;
 
-    //    globalSave.collectedNotes = inCollectedNotes;
+    //        globalSave.collectedNotes = inCollectedNotes;
 
-    //    return globalSave;
-    //}
+    //        return globalSave;
+    //    }
 
-    //public static void SaveGlobal(GlobalStorage globalSave)
-    //{
-    //    BinaryFormatter bf = new BinaryFormatter();
+    //    public static void SaveGlobal(GlobalStorage globalSave)
+    //    {
+    //        BinaryFormatter bf = new BinaryFormatter();
 
-    //    FileStream file = File.Create(Application.persistentDataPath + "/GlobalSave.globalSave");
+    //        FileStream file = File.Create(Application.persistentDataPath + "/GlobalSave.globalSave");
 
-    //    bf.Serialize(file, globalSave);
+    //        bf.Serialize(file, globalSave);
 
-    //    file.Close();
+    //        file.Close();
 
-    //    Debug.Log("Game Saved");
+    //        Debug.Log("Game Saved");
 
-    //}
+    //    }
 
-    //public static GlobalStorage LoadGlobal(string name, string fileType)
-    //{
-    //    string filePath = Application.persistentDataPath + "/GlobalSave.globalSave";
+    //    public static GlobalStorage LoadGlobal(string name, string fileType)
+    //    {
+    //        string filePath = Application.persistentDataPath + "/GlobalSave.globalSave";
 
-    //    if (!File.Exists(filePath)) { Debug.LogError("No Save"); return null; }
+    //        if (!File.Exists(filePath)) { Debug.LogError("No Save"); return null; }
 
-    //    BinaryFormatter bf = new BinaryFormatter();
+    //        BinaryFormatter bf = new BinaryFormatter();
 
-    //    FileStream file = File.Open(filePath, FileMode.Open);
+    //        FileStream file = File.Open(filePath, FileMode.Open);
 
-    //    GlobalStorage globalSave = (GlobalStorage)bf.Deserialize(file);
+    //        GlobalStorage globalSave = (GlobalStorage)bf.Deserialize(file);
 
-    //    file.Close();
+    //        file.Close();
 
-    //    Debug.Log("Save Loaded");
+    //        Debug.Log("Save Loaded");
 
-    //    return globalSave;
-    //}
+    //        return globalSave;
+    //    }
 
-}
+    }
 
-[System.Serializable]
-public class DimensionStorage
-{
-    public bool hasGift = false;
+    [System.Serializable]
+    public class DimensionStorage
+    {
+        public bool hasGift = false;
 
-    public int currentCheckPoint = 0;
+        public int currentCheckPoint = 0;
 
-    public List<Note> notes = null;
+        public List<Note> notes = null;
 
-    public bool completed = false;
+        public bool completed = false;
 
-}
+    }
 
 //[System.Serializable]
 //public class GlobalStorage
 //{
-//    public bool[] completedLevels;
-//    public bool[] collectedNotes;
+//    public int currnetSceneInt;
+//    public List<Note> collectedNotes;
 //}

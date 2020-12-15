@@ -26,11 +26,16 @@ public class Game_Manager : MonoBehaviour
         UIManager = GetComponent<UI_Manager>();
         dimensionInterface = GetComponent(typeof(Dimension)) as Dimension;
 
-       // dimensionInterface.NormalStart();
+        // dimensionInterface.NormalStart();
 
-        dimensionInterface.LoadProgress();
+        List<Note> notes = CreateNotes();
 
-        CreateNotes();
+        dimensionInterface.LinkNotes(notes); //Links the references to the dimension not the values
+
+        dimensionInterface.LoadProgress(); //Only 1 notes exists at one time, any changes propagate through the whole system
+
+        ConnectNotesToGameObjects(notes); //Uses the loaded data and not the base data if called after       
+       
         // game = GetComponent<Game>();
     }
 
@@ -118,20 +123,23 @@ public class Game_Manager : MonoBehaviour
         dimensionInterface.FoundNote(note);
     }
 
-    public void CreateNotes()
+    public List<Note> CreateNotes()
     {
         List<Note> notes = CreateNoteListCopy(game.GetNotes()); //Dont effect the base data, otherwise reset wont reset notes
 
-        dimensionInterface.LinkNotes(notes);
+        return notes;
+    }
 
+    private void ConnectNotesToGameObjects(List<Note> notes) //Link list to in scene objects
+    {
         GameObject[] noteLocations = GameObject.FindGameObjectsWithTag("NoteLocation");
         NoteInteract[] noteInteracts = new NoteInteract[noteLocations.Length];
 
-        foreach(GameObject obj in noteLocations)
+        foreach (GameObject obj in noteLocations)
         {
             NoteInteract noteInteract = obj.GetComponent<NoteInteract>();
 
-            if(noteInteract.GetNoteId() < 0 || noteInteract.GetNoteId() > noteLocations.Length - 1)
+            if (noteInteract.GetNoteId() < 0 || noteInteract.GetNoteId() > noteLocations.Length - 1)
             {
                 Debug.LogError("Note ID miss match");
             }
@@ -139,21 +147,23 @@ public class Game_Manager : MonoBehaviour
             {
                 noteInteracts[noteInteract.GetNoteId()] = noteInteract;
             }
-           
+
         }
 
-        foreach(Note nt in notes)
+        foreach (Note nt in notes)
         {
-            if(nt.ID > noteInteracts.Length - 1)
+            if (nt.ID > noteInteracts.Length - 1)
             {
                 Debug.LogError("Note ID miss match");
-            }else
+            }
+            else
             {
                 noteInteracts[nt.ID].SetNote(nt);
-               // nt.Title = "AAAAAAAAAAAAA"; Linking Test to see if old data changes
+                // nt.Title = "AAAAAAAAAAAAA"; Linking Test to see if old data changes
             }
-          
+
         }
+
     }
 
     private List<Note> CreateNoteListCopy(List<Note> _notes)
@@ -174,7 +184,10 @@ public class Game_Manager : MonoBehaviour
         return newNotes;
     }
 
-
+    public List<Note> GetNotes()
+    {
+        return dimensionInterface.GetNotes();
+    }
 
    
 }

@@ -9,17 +9,19 @@ public class NoteInteract : BaseInteract , Interactable
     public void Interact()
     {
         gameManager.FoundNote(note);
+        gameObject.SetActive(false);
     }
 
     public void SetNote(Note _note)
     {
         note = _note;
+
+        if(_note.Collected == true) { gameObject.SetActive(false); }
     }
 
     public int GetNoteId()
     {
         return noteID;
     }
-
  
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(Game_Manager))]
+
 public class DarkDimension : BaseDimension, Dimension
 {
     [SerializeField] private CheckPointSystem checkPointSystem;
@@ -24,6 +24,7 @@ public class DarkDimension : BaseDimension, Dimension
     public void NextCheckPoint()
     {
         checkPointSystem.TriggerNextPoint();
+        SaveDimension();
     }
 
     public void ChoiceSelected(GiftChoices choice)
@@ -80,23 +81,54 @@ public class DarkDimension : BaseDimension, Dimension
     {
         DimensionStorage dimensionSave = GameSave_Manager.LoadDimension(dimensionName);
 
-        if(dimensionSave == null) { NormalStart(); return; }
+       // print(dimensionSave.notes.Count);
 
-        if(dimensionSave.currentCheckPoint == 0) { NormalStart(); return; } // Ignore origin check point (Has no zone)
+        //foreach (Note nt in dimensionSave.notes)
+        //{
+        //    print(nt.Collected);
+        //}
+
+        if (dimensionSave == null) { NormalStart(); return; }
+
+        foreach (Note nt in dimensionSave.notes)
+        {
+            if (nt.Collected)
+            {
+                FindNoteByID(nt.ID).Collected = true;
+            }
+        }
+
+        if (dimensionSave.currentCheckPoint == 0) { NormalStart(); return; } // Ignore origin check point (Has no zone)
 
         if (dimensionSave.hasGift) { GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerItem_Manager>().AddItem(giftPrefab); }
 
         GameArea.SetActive(true);
-        zoneManager.TriggerZones(dimensionSave.currentCheckPoint); 
-        PlayerDead();
 
-        checkPointSystem.SetProgress(checkPointSystem.GetCurrentInt() - 1);
+        zoneManager.TriggerZones(dimensionSave.currentCheckPoint);
+        checkPointSystem.SetProgress(dimensionSave.currentCheckPoint);
+
+        PlayerDead();
+       
     }
 
-    private void SaveDimension() //TO-DO Complete This
+    private void SaveDimension() //Save whenever something important happens
     {
         DimensionStorage gameFile = GameSave_Manager.CreateDimensionSaveGameObject(checkPointSystem.GetCurrentInt(), notes, isLevelCompleted, hasGift);
+
+        //print(gameFile.notes.Count);
+
+        //foreach (Note nt in gameFile.notes)
+        //{
+        //    print(nt.Collected);
+        //}
+
         GameSave_Manager.SaveDimension(gameFile, dimensionName);
+    }
+
+    public override void FoundNote(Note note)
+    {
+        base.FoundNote(note);
+        SaveDimension();
     }
 
 }
