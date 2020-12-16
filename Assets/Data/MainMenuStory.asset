@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf5d5e33bab057c43929a11bc8f25f44, type: 3}
   m_Name: MainMenuStory
   m_EditorClassIdentifier: 
+  _dimensionName: Home
   _beats:
   - _choices:
     - _text: Help me
@@ -43,3 +44,4 @@ MonoBehaviour:
       _Instruction: 0
       _Locations: 0
       _GiftChoices: 0
+  _notes: []

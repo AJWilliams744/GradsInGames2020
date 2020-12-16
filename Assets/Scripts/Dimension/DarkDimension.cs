@@ -36,8 +36,9 @@ public class DarkDimension : BaseDimension, Dimension
                 if(giftPrefab.tag == "PlayerItemGift")
                 {
                     GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerItem_Manager>().AddItem(giftPrefab);
+                    
                 } //TO-DO create world gift items
-               
+                hasGift = true;
                 break;
 
             case GiftChoices.Leave: //TO-DO Check save for completing with no gift
@@ -67,6 +68,9 @@ public class DarkDimension : BaseDimension, Dimension
     {
         methodPasser[] methods = new methodPasser[1];
         methods[0] = LoadNextScene;
+
+        isLevelCompleted = true;
+        SaveDimension();
 
         StartCoroutine(WaitToTrigger(methods, 6));
     }
@@ -108,12 +112,15 @@ public class DarkDimension : BaseDimension, Dimension
         checkPointSystem.SetProgress(dimensionSave.currentCheckPoint);
 
         PlayerDead();
-       
+
+        SaveDimension(); //Create an empty location for player to return if quit;
     }
 
-    private void SaveDimension() //Save whenever something important happens
+    public override void SaveDimension() //Save whenever something important happens
     {
-        DimensionStorage gameFile = GameSave_Manager.CreateDimensionSaveGameObject(checkPointSystem.GetCurrentInt(), notes, isLevelCompleted, hasGift);
+        int buildIndex = SceneManager.GetActiveScene().buildIndex;
+
+        DimensionStorage gameFile = GameSave_Manager.CreateDimensionSaveGameObject(checkPointSystem.GetCurrentInt(), notes, isLevelCompleted, hasGift, buildIndex);
 
         //print(gameFile.notes.Count);
 

@@ -9,6 +9,8 @@ using UnityEditor;
 [Serializable]
 public class StoryData : ScriptableObject
 {
+    [SerializeField] private string _dimensionName;
+
     [SerializeField] private List<BeatData> _beats;
 
     [SerializeField] private List<Note> _notes;
@@ -23,8 +25,13 @@ public class StoryData : ScriptableObject
         return _notes;
     }
 
+    public string GetDimensionName()
+    {
+        return _dimensionName;
+    }
+
 #if UNITY_EDITOR
-    public const string PathToAsset = "Assets/Data/Story.asset";
+    public const string PathToAsset = "Assets/Data/BaseStory.asset";
 
     public static StoryData LoadData()
     {

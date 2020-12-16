@@ -6,7 +6,7 @@ using UnityEngine;
 
 public static class GameSave_Manager
 {
-    public static DimensionStorage CreateDimensionSaveGameObject(int inCurrentCheckPoint, List<Note> inNotes, bool inCompleted, bool inHasGift)
+    public static DimensionStorage CreateDimensionSaveGameObject(int inCurrentCheckPoint, List<Note> inNotes, bool inCompleted, bool inHasGift, int inBuildIndex)
     {
         DimensionStorage dimensionSave = new DimensionStorage();
 
@@ -17,6 +17,8 @@ public static class GameSave_Manager
         dimensionSave.completed = inCompleted;
 
         dimensionSave.hasGift = inHasGift;
+
+        dimensionSave.buildIndex = inBuildIndex;
 
         return dimensionSave;
     }
@@ -61,6 +63,30 @@ public static class GameSave_Manager
         return File.Exists(Application.persistentDataPath + "/" + name + ".dimensionSave");
     }
 
+    public static void DeleteAllDimensions()
+    {
+        List<string> allNames = GetAllDimensionNames();
+
+        foreach(string name in allNames)
+        {
+            File.Delete(Application.persistentDataPath + "/" + name + ".dimensionSave");
+        }
+    }
+
+    public static List<string> GetAllDimensionNames()
+    {
+        List<string> allNames = new List<string>();
+
+        DirectoryInfo dir = new DirectoryInfo(Application.persistentDataPath);
+        FileInfo[] info = dir.GetFiles("*.dimensionSave*");
+        foreach (FileInfo f in info)
+        {
+            string[] splitString = f.Name.Split('.');
+            allNames.Add(splitString[0]);
+        }
+
+        return allNames;
+    }
     //    public static GlobalStorage CreateGlobalSaveGameObject(int inCurrentSceneInt, List<Note> inCollectedNotes)
     //    {
     //        GlobalStorage globalSave = new GlobalStorage();
@@ -117,6 +143,8 @@ public static class GameSave_Manager
         public List<Note> notes = null;
 
         public bool completed = false;
+
+        public int buildIndex = 0;
 
     }
 

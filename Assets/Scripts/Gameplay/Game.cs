@@ -156,4 +156,9 @@ public class Game : MonoBehaviour
     {
         return _data.GetNotes();
     }
+
+    public string GetDimensionName()
+    {
+        return _data.GetDimensionName();
+    }
 }

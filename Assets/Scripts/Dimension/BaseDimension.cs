@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Game_Manager))]
 public class BaseDimension : MonoBehaviour
 {
-    [SerializeField] protected string dimensionName;
+    protected string dimensionName;
 
     protected Game_Manager gm;
     protected delegate void methodPasser();
@@ -22,8 +22,10 @@ public class BaseDimension : MonoBehaviour
     {
         gm = GetComponent<Game_Manager>();
 
+        dimensionName = gm.GetDimensionName();
+
 #if UNITY_EDITOR
-        GameSave_Manager.DeleteDimension(dimensionName);
+        //GameSave_Manager.DeleteDimension(dimensionName);
 #endif
     }
 
@@ -107,5 +109,14 @@ public class BaseDimension : MonoBehaviour
     {
         GameSave_Manager.DeleteDimension(dimensionName);
     }
- 
+
+    public virtual void SaveDimension() //Save whenever something important happens
+    {
+        int buildIndex = SceneManager.GetActiveScene().buildIndex;
+
+        DimensionStorage gameFile = GameSave_Manager.CreateDimensionSaveGameObject(0, notes, isLevelCompleted, hasGift, buildIndex);
+
+        GameSave_Manager.SaveDimension(gameFile, dimensionName);
+    }
+
 }

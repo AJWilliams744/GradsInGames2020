@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -196,5 +197,10 @@ public class Game_Manager : MonoBehaviour
         print("loading");
         PlayerPrefs.SetInt("Scene", SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene("LoadingScene");
+    }
+
+    public string GetDimensionName()
+    {
+        return game.GetDimensionName();
     }
 }
