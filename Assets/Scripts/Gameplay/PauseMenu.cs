@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject selectedNoteArea; //TO-DO Put this functionality into another class (Note Menu Class)
     [SerializeField] private TMP_Text noteTitleArea;
     [SerializeField] private TMP_Text noteContentsArea;
+
+    [SerializeField] private Slider mouseSensitivitySlider;
 
     private Game_Manager gameManager;
 
@@ -118,6 +121,17 @@ public class PauseMenu : MonoBehaviour
         if (!gameManager)
         {
             Debug.LogError("No Game Manager in Scene");
+        }
+       
+
+        if(PlayerPrefs.GetFloat("MouseSensitivity") > 0)
+        {
+            mouseSensitivitySlider.value = PlayerPrefs.GetFloat("MouseSensitivity");
+            print(PlayerPrefs.GetFloat("MouseSensitivity"));
+        }
+        else
+        {
+            PlayerPrefs.SetFloat("MouseSensitivity", mouseSensitivitySlider.value);
         }
     }
 

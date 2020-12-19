@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class DarkDimension : BaseDimension, Dimension
 {
-    [SerializeField] private CheckPointSystem checkPointSystem;
+
 
     [SerializeField] private GameObject GameArea;
     [SerializeField] private Light globalLight;
@@ -16,37 +16,10 @@ public class DarkDimension : BaseDimension, Dimension
 
     [SerializeField] private ZoneManager zoneManager;
 
-    public void PlayerDead()
+
+    public override void ChoiceSelected(GiftChoices choice)
     {
-        gm.TeleportPlayer(checkPointSystem.GetCurrentCheckLocation());
-    }
-
-    public void NextCheckPoint()
-    {
-        checkPointSystem.TriggerNextPoint();
-        SaveDimension();
-    }
-
-    public void ChoiceSelected(GiftChoices choice)
-    {
-        switch (choice)
-        {
-            case GiftChoices.Take:
-
-                if(giftPrefab.tag == "PlayerItemGift")
-                {
-                    GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerItem_Manager>().AddItem(giftPrefab);
-                    
-                } //TO-DO create world gift items
-                hasGift = true;
-                break;
-
-            case GiftChoices.Leave: //TO-DO Check save for completing with no gift
-                break;
-
-            default:
-                break;
-        }
+        base.ChoiceSelected(choice);
 
         GameArea.SetActive(true);
         StartCoroutine(FadeGlobalLight(1, 0, endFadeTime));
@@ -79,6 +52,7 @@ public class DarkDimension : BaseDimension, Dimension
     {
         GameArea.SetActive(false);
         StartCoroutine(FadeGlobalLight(0, 1, startFadeTime));
+        SaveDimension();
     }
 
     public void LoadProgress()
@@ -112,6 +86,8 @@ public class DarkDimension : BaseDimension, Dimension
         checkPointSystem.SetProgress(dimensionSave.currentCheckPoint);
 
         PlayerDead();
+
+        gm.NextSong();
 
         SaveDimension(); //Create an empty location for player to return if quit;
     }

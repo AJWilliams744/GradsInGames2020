@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf5d5e33bab057c43929a11bc8f25f44, type: 3}
+  m_Name: DarkDimensionStory
+  m_EditorClassIdentifier: 
+  _dimensionName: DarkDimension
+  _beats:
+  - _choices:
+    - _text: Accept the Gift
+      _beatId: 2
+    - _text: Reject the Gift
+      _beatId: 3
+    - _text: Freedom (Quit to menu)
+      _beatId: 3
+    _text: 'Looks like the laptop is unaffected by the effects of this dimension.
+
+      I''ll
+      keep it short, I need you to turn on a switch at the end of the dimension,
+      we don''t have enough power to move on.
+
+
+      I can only gift you a lighter
+      so I hope you will help me.
+
+
+
+
+'
+    _id: 1
+    _Instruction:
+      _Instruction: 2
+      _Locations: 1
+      _GiftChoices: 0
+  - _choices: []
+    _text: Enjoy this gift, it wont be the last.  Use the left click to turn on,
+      right click to focus.
+    _id: 2
+    _Instruction:
+      _Instruction: 1
+      _Locations: 1
+      _GiftChoices: 0
+  - _choices: []
+    _text: Try to remember how to get back here, lets see if I can hide till then.
+    _id: 4
+    _Instruction:
+      _Instruction: 0
+      _Locations: 0
+      _GiftChoices: 0
+  - _choices: []
+    _text: I like your confidence, show me what you can do
+    _id: 3
+    _Instruction:
+      _Instruction: 1
+      _Locations: 1
+      _GiftChoices: 1
+  _notes:
+  - _iD: 0
+    _collected: 0
+    _title: How it all began
+    _contents: asadasd
+  - _iD: 1
+    _collected: 0
+    _title: Sometime in the furture
+    _contents: asdasdadssa

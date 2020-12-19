@@ -12,62 +12,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf5d5e33bab057c43929a11bc8f25f44, type: 3}
   m_Name: BaseStory
   m_EditorClassIdentifier: 
-  _dimensionName: DarkDimension
+  _dimensionName: 
   _beats:
   - _choices:
-    - _text: Accept the Gift
+    - _text: Accept the gift
       _beatId: 2
-    - _text: Reject the Gift
+    - _text: Reject the gift
       _beatId: 3
-    - _text: Freedom (Quit to menu)
-      _beatId: 3
-    _text: 'Looks like the laptop is unaffected by the effects of this dimension.
-
-      I''ll
-      keep it short, I need you to turn on a switch at the end of the dimension,
-      we don''t have enough power to move on.
-
-
-      I can only gift you a lighter
-      so I hope you will help me.
-
-
-
-
-'
+    _text: "Seems like the power is back on, guess those candles weren\u2019t a waste,
+      well done.\nBut it seems the power disrupted the travel tunnel, you've been
+      thrown into the world trees domain.\nFind the tree to escape, there will be
+      4 mazes only 1 holds the tree\nOnce again I can offer you a gift I hope you
+      can trust me now."
     _id: 1
     _Instruction:
       _Instruction: 2
-      _Locations: 1
+      _Locations: 2
       _GiftChoices: 0
   - _choices: []
-    _text: Enjoy this gift, it wont be the last.  Use the left click to turn on,
-      right click to focus.
+    _text: I knew you'd help me, left click to leave a mark on any surface, right
+      click to clear all marks.
     _id: 2
     _Instruction:
       _Instruction: 1
-      _Locations: 1
+      _Locations: 2
       _GiftChoices: 0
   - _choices: []
-    _text: Try to remember how to get back here, lets see if I can hide till then.
-    _id: 4
-    _Instruction:
-      _Instruction: 0
-      _Locations: 0
-      _GiftChoices: 0
-  - _choices: []
-    _text: I like your confidence, show me what you can do
+    _text: "Oh, okay...\r\nWe'll it\u2019s not like you'll have a choice soon anyway.\r"
     _id: 3
     _Instruction:
       _Instruction: 1
-      _Locations: 1
+      _Locations: 2
       _GiftChoices: 1
   _notes:
   - _iD: 0
     _collected: 0
-    _title: How it all began
-    _contents: asadasd
+    _title: asdasf
+    _contents: asdasd
   - _iD: 1
     _collected: 0
-    _title: Sometime in the furture
-    _contents: asdasdadssa
+    _title: aa
+    _contents: sadasd

@@ -203,4 +203,9 @@ public class Game_Manager : MonoBehaviour
     {
         return game.GetDimensionName();
     }
+
+    public void NextSong()
+    {
+        musicManager.NextSong();
+    }
 }

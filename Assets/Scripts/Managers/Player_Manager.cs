@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_Manager : MonoBehaviour
 {
     [SerializeField] private MonoBehaviour[] AllScriptsToDisable; //When player is disabled
     [SerializeField] private GameObject Camera;
     [SerializeField] private PlayerMovement playerMovement;
+
+    [SerializeField] private MouseLook mouseLook;
 
     private Game_Manager gm;
 
@@ -75,5 +78,11 @@ public class Player_Manager : MonoBehaviour
     public void TeleportPlayer(Transform newLocation)
     {
         playerMovement.TeleportPlayer(newLocation);
+    }
+
+    public void SetMouseSensitivity(Slider slider)
+    {
+        PlayerPrefs.SetInt("MouseSensitivity", (int)slider.value);
+        mouseLook.SetMouseSensitivity((int)slider.value);
     }
 }

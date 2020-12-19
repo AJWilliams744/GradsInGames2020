@@ -10,7 +10,7 @@ public class BaseDimension : MonoBehaviour
 
     protected Game_Manager gm;
     protected delegate void methodPasser();
-
+    [SerializeField] protected CheckPointSystem checkPointSystem;
     [SerializeField] protected GameObject giftPrefab;
     [SerializeField] private GameObject PauseMenu;
 
@@ -45,6 +45,35 @@ public class BaseDimension : MonoBehaviour
 
     }
 
+    public virtual void ChoiceSelected(GiftChoices choice)
+    {
+        switch (choice)
+        {
+            case GiftChoices.Take:
+
+                if (giftPrefab.tag == "PlayerItemGift")
+                {
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerItem_Manager>().AddItem(giftPrefab);
+
+                } //TO-DO create world gift items
+                hasGift = true;
+                break;
+
+            case GiftChoices.Leave: //TO-DO Check save for completing with no gift
+                break;
+
+            default:
+                break;
+        }
+
+    }
+
+    public void PlayerDead()
+    {
+        gm.TeleportPlayer(checkPointSystem.GetCurrentCheckLocation());
+    }
+
+
     public void RemoveGift()
     {
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerItem_Manager>().RemoveGift();
@@ -53,7 +82,9 @@ public class BaseDimension : MonoBehaviour
     protected void LoadNextScene()
     {
         print("loading");
-        PlayerPrefs.SetInt("Scene", SceneManager.GetActiveScene().buildIndex + 1);
+        // PlayerPrefs.SetInt("Scene", SceneManager.GetActiveScene().buildIndex + 1);
+
+        PlayerPrefs.SetInt("Scene", 0);
         SceneManager.LoadScene("LoadingScene");
     }
 
@@ -117,6 +148,12 @@ public class BaseDimension : MonoBehaviour
         DimensionStorage gameFile = GameSave_Manager.CreateDimensionSaveGameObject(0, notes, isLevelCompleted, hasGift, buildIndex);
 
         GameSave_Manager.SaveDimension(gameFile, dimensionName);
+    }
+
+    public void NextCheckPoint()
+    {
+        checkPointSystem.TriggerNextPoint();
+        SaveDimension();
     }
 
 }
