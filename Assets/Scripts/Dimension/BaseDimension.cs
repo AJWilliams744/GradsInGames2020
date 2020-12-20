@@ -13,7 +13,7 @@ public class BaseDimension : MonoBehaviour
     [SerializeField] protected CheckPointSystem checkPointSystem;
     [SerializeField] protected GameObject giftPrefab;
     [SerializeField] private GameObject PauseMenu;
-
+    [SerializeField] private Light globalLight;
     protected bool isLevelCompleted;
     protected bool hasGift;
     protected List<Note> notes;
@@ -25,7 +25,7 @@ public class BaseDimension : MonoBehaviour
         dimensionName = gm.GetDimensionName();
 
 #if UNITY_EDITOR
-        GameSave_Manager.DeleteDimension(dimensionName);
+       // GameSave_Manager.DeleteDimension(dimensionName);
 #endif
     }
 
@@ -42,6 +42,19 @@ public class BaseDimension : MonoBehaviour
         {
             method?.Invoke(); // If not null
         }
+
+    }
+
+
+    protected IEnumerator FadeGlobalLight(float startIntensity, float endIntensity, float time)
+    {
+        globalLight.intensity = startIntensity;
+        for (float i = 0; i < time; i += Time.deltaTime)
+        {
+            globalLight.intensity = Mathf.Lerp(startIntensity, endIntensity, i / time);
+            yield return new WaitForEndOfFrame();
+        }
+        globalLight.intensity = endIntensity;
 
     }
 
@@ -143,6 +156,7 @@ public class BaseDimension : MonoBehaviour
 
     public virtual void SaveDimension() //Save whenever something important happens
     {
+        print(dimensionName);
         int buildIndex = SceneManager.GetActiveScene().buildIndex;
 
         DimensionStorage gameFile = GameSave_Manager.CreateDimensionSaveGameObject(0, notes, isLevelCompleted, hasGift, buildIndex);

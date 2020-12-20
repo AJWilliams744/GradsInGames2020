@@ -18,7 +18,7 @@ public class MusicManager : MonoBehaviour
     public void NextSong()
     {
         currentSong += 1;
-        if(currentSong > MusicTracks.Length)
+        if(currentSong >= MusicTracks.Length)
         {
             currentSong = 0;
         }

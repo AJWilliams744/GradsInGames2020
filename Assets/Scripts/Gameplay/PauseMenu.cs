@@ -113,7 +113,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
     private void Awake()
     {
@@ -127,7 +127,7 @@ public class PauseMenu : MonoBehaviour
         if(PlayerPrefs.GetFloat("MouseSensitivity") > 0)
         {
             mouseSensitivitySlider.value = PlayerPrefs.GetFloat("MouseSensitivity");
-            print(PlayerPrefs.GetFloat("MouseSensitivity"));
+            //print(PlayerPrefs.GetFloat("MouseSensitivity"));
         }
         else
         {

@@ -6,11 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class DarkDimension : BaseDimension, Dimension
 {
-
-
     [SerializeField] private GameObject GameArea;
-    [SerializeField] private Light globalLight;
-
     [SerializeField] private float startFadeTime = 2;
     [SerializeField] private float endFadeTime = 10;
 
@@ -25,17 +21,6 @@ public class DarkDimension : BaseDimension, Dimension
         StartCoroutine(FadeGlobalLight(1, 0, endFadeTime));
     }
 
-    private IEnumerator FadeGlobalLight(float startIntensity, float endIntensity,float time)
-    {
-        globalLight.intensity = startIntensity;
-        for(float i = 0; i < time; i += Time.deltaTime)
-        {
-            globalLight.intensity = Mathf.Lerp(startIntensity, endIntensity, i / time);
-            yield return new WaitForEndOfFrame();
-        }
-        globalLight.intensity = endIntensity;
-
-    }
 
     public void SwitchTriggered(string name)
     {
@@ -78,7 +63,9 @@ public class DarkDimension : BaseDimension, Dimension
 
         if (dimensionSave.currentCheckPoint == 0) { NormalStart(); return; } // Ignore origin check point (Has no zone)
 
-        if (dimensionSave.hasGift) { GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerItem_Manager>().AddItem(giftPrefab); }
+        hasGift = dimensionSave.hasGift;
+
+        if (hasGift) { GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerItem_Manager>().AddItem(giftPrefab); }
 
         GameArea.SetActive(true);
 

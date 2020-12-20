@@ -51,7 +51,7 @@ public static class GameSave_Manager
 
         file.Close();
 
-        Debug.Log("Save Loaded");
+        Debug.Log("Dimension Loaded");
 
         return dimension;
     }

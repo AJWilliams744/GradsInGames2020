@@ -21,26 +21,26 @@ public class ZoneTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        LoudTrigger(true);       
+        if(other.tag == "Player")
+        {
+            LoudTrigger(true, zoneAppearSource.volume);
+        }
+             
     }
 
     public void LoadTrigger()
-    {
-        bool orignial = isDelayed;
-        float originalSound = zoneAppearSource.volume;
+    {      
 
         isDelayed = false;
         zoneAppearSource.volume = 0;
 
-        LoudTrigger(false);
-
-        isDelayed = orignial;
-        zoneAppearSource.volume = originalSound;
+        LoudTrigger(false, 0);
 
     }
 
-    public void LoudTrigger(bool addCheckpoint)
+    public void LoudTrigger(bool addCheckpoint, float volume)
     {
+
         if (triggered) { return; }
 
         if (removeGift) { currentDimension.RemoveGift(); }
@@ -60,11 +60,14 @@ public class ZoneTrigger : MonoBehaviour
         }
         else
         {
+            zoneAppearSource.volume = volume;
             foreach (GameObject gm in stages)
             {
-                gm.SetActive(true);
                 zoneAppearSource.PlayOneShot(zoneAppearSource.clip);
+                gm.SetActive(true);
+               
             }
+            
             Destroy(this);
         }
     }
@@ -83,15 +86,16 @@ public class ZoneTrigger : MonoBehaviour
 
     private void Awake()
     {
-        foreach (GameObject gm in stages)
-        {
-            gm.SetActive(false);
-        }
+        
     }
 
     private void Start()
     {
         currentDimension = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Dimension>();
+        foreach (GameObject gm in stages)
+        {
+            gm.SetActive(false);
+        }
     }
 
 }

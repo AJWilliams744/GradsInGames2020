@@ -14,6 +14,8 @@ public class Game_Manager : MonoBehaviour
     [SerializeField] private MusicManager musicManager;
     [SerializeField] private GameObject laptop;
 
+    [SerializeField] private GameObject noteFoundUI;
+
     private Dimension dimensionInterface;
     private Transform laptopReturnTransform;
 
@@ -23,7 +25,7 @@ public class Game_Manager : MonoBehaviour
     private float laptopMoveSpeed = 2f;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         UIManager = GetComponent<UI_Manager>();
         dimensionInterface = GetComponent(typeof(Dimension)) as Dimension;
@@ -117,11 +119,14 @@ public class Game_Manager : MonoBehaviour
 
     public void SwitchTriggered(string name)
     {
+        if(dimensionInterface == null) { return; }
         dimensionInterface.SwitchTriggered(name);
     }
 
     public void FoundNote(Note note)
     {
+        //print("GOUND");
+        noteFoundUI.SetActive(true);
         dimensionInterface.FoundNote(note);
     }
 

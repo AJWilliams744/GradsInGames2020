@@ -22,11 +22,12 @@ public class Marker : MonoBehaviour, PlayerItem
         if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hit, decalRange, decalLayerMask))
         {
             // Original image is rotated y 90, this fixes that
-            Vector3 angle = new Vector3(hit.normal.x, decalPrefab.transform.eulerAngles.y, Quaternion.Euler(hit.normal).z); 
+            //Vector3 angle = new Vector3(hit.normal.x, decalPrefab.transform.eulerAngles.y, Quaternion.Euler(hit.normal).z); 
+            Vector3 angle = hit.normal;
 
             Debug.DrawRay(mainCamera.transform.position, mainCamera.transform.forward * 500, Color.yellow);
 
-            GameObject aDecal = Instantiate(decalPrefab, (hit.point + hit.normal * 0.1f), Quaternion.Euler(angle));
+            GameObject aDecal = Instantiate(decalPrefab, (hit.point + hit.normal * 0.1f), Quaternion.FromToRotation(Vector3.forward, hit.normal));
 
             HandleDecalCount(aDecal);
         }

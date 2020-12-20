@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NoteInteract : BaseInteract , Interactable
 {
+    [SerializeField] private GameObject zoneParent;
     [SerializeField] private int noteID;
     private Note note;
     public void Interact()
@@ -23,5 +24,13 @@ public class NoteInteract : BaseInteract , Interactable
     {
         return noteID;
     }
- 
+
+    public override void Start()
+    {
+        base.Start();
+
+        if(zoneParent == null) { return; }
+        transform.SetParent(zoneParent.transform);
+    }
+
 }

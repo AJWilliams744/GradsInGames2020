@@ -6,7 +6,7 @@ public class BaseInteract : MonoBehaviour
 {
     protected Game_Manager gameManager;
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Game_Manager>();
         if (!gameManager)
