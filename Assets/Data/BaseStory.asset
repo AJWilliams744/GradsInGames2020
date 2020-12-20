@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf5d5e33bab057c43929a11bc8f25f44, type: 3}
   m_Name: BaseStory
   m_EditorClassIdentifier: 
-  _dimensionName: 
+  _dimensionName: MazeDimension
   _beats:
   - _choices:
     - _text: Accept the gift
@@ -20,10 +20,10 @@ MonoBehaviour:
     - _text: Reject the gift
       _beatId: 3
     _text: "Seems like the power is back on, guess those candles weren\u2019t a waste,
-      well done.\nBut it seems the power disrupted the travel tunnel, you've been
-      thrown into the world trees domain.\nFind the tree to escape, there will be
-      4 mazes only 1 holds the tree\nOnce again I can offer you a gift I hope you
-      can trust me now."
+      well done.\r\nBut it seems the power disrupted the travel tunnel, you've been
+      thrown into the world trees domain.\r\nYou must reconnect the tree to escape,
+      there will be 4 mazes only 1 holds the tree\r\nOnce again, I can offer you
+      a gift, I hope you can trust me now.\r"
     _id: 1
     _Instruction:
       _Instruction: 2

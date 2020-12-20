@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerItem_Manager : MonoBehaviour
 {
     [Tooltip("Leave blank if not starting Item")] 
-    [SerializeField] private MonoBehaviour startingPlayerItem;
+    [SerializeField] private GameObject startingPlayerItem;
     private PlayerItem playerItem;
 
     [SerializeField] private GameObject HandJointLocation;
@@ -14,15 +14,16 @@ public class PlayerItem_Manager : MonoBehaviour
     {
         if(startingPlayerItem != null)
         {
-            if(startingPlayerItem is PlayerItem)
-            {
-                playerItem = startingPlayerItem as PlayerItem;
-            }
-            else
+            playerItem = startingPlayerItem.GetComponent<PlayerItem>();
+
+            if(playerItem == null)
             {
                 Debug.LogWarning("Start Item is not a Player Item");
             }
-            
+            else
+            {
+                AddItem(startingPlayerItem);
+            }       
         }
     }
     public void ItemMainFire()

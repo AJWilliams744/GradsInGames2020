@@ -25,7 +25,7 @@ public class BaseDimension : MonoBehaviour
         dimensionName = gm.GetDimensionName();
 
 #if UNITY_EDITOR
-        //GameSave_Manager.DeleteDimension(dimensionName);
+        GameSave_Manager.DeleteDimension(dimensionName);
 #endif
     }
 

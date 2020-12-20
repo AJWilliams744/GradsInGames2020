@@ -9,6 +9,7 @@ TagManager:
   - PlayerItemGift
   - WorldItemGift
   - NoteLocation
+  - SecondaryCamera
   layers:
   - Default
   - TransparentFX
