@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4556463469817771024}
   m_Layer: 12
   m_Name: OverlayCam
-  m_TagString: Untagged
+  m_TagString: SecondaryCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,7 +56,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 4.9
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
+  m_RenderShadows: 0
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 1
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 52108627}
   - component: {fileID: 52108628}
   m_Layer: 12
-  m_Name: Player
+  m_Name: Player_P
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -355,6 +355,7 @@ MonoBehaviour:
   - {fileID: 834442393}
   Camera: {fileID: 8577340770410431098}
   playerMovement: {fileID: 8577340770292578596}
+  mouseLook: {fileID: 8577340770410431089}
 --- !u!114 &52108627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -450,7 +451,7 @@ Camera:
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 7991
+    m_Bits: 335671
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
