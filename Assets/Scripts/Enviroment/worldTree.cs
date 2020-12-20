@@ -6,11 +6,9 @@ public class worldTree : MonoBehaviour
 {
     private Game_Manager gameManager;
 
-    private bool firstTime = true; //Stop it triggering before active is false
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.tag == "Player")
+        if (other.tag == "Player")
         {
             gameManager.SwitchTriggered("END");
         }

@@ -95,9 +95,9 @@ public class BaseDimension : MonoBehaviour
     protected void LoadNextScene()
     {
         print("loading");
-        // PlayerPrefs.SetInt("Scene", SceneManager.GetActiveScene().buildIndex + 1);
+        PlayerPrefs.SetInt("Scene", SceneManager.GetActiveScene().buildIndex + 1);
 
-        PlayerPrefs.SetInt("Scene", 0);
+        //PlayerPrefs.SetInt("Scene", 0);
         SceneManager.LoadScene("LoadingScene");
     }
 

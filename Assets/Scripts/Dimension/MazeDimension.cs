@@ -54,8 +54,6 @@ public class MazeDimension : BaseDimension, Dimension
 
         DimensionStorage gameFile = GameSave_Manager.CreateDimensionSaveGameObject(checkPointSystem.GetCurrentInt(), notes, isLevelCompleted, hasGift, buildIndex);
 
-        print(gameFile.hasGift);
-
         GameSave_Manager.SaveDimension(gameFile, dimensionName);
     }
 
@@ -74,7 +72,10 @@ public class MazeDimension : BaseDimension, Dimension
 
         if (name == "END")
         {
-            
+            isLevelCompleted = true;
+            SaveDimension();
+            LoadNextScene();
+
         }
     }
 
