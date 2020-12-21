@@ -7,6 +7,8 @@ public class EndDimension : BaseDimension, Dimension
 {
     [SerializeField] private StoryData badEnding;
     [SerializeField] private StoryData goodEnding;
+
+    [SerializeField] private GameObject endNote;
     public void LoadProgress()
     {    
         SaveDimension(); //Create an empty location for player to return if quit;
@@ -25,6 +27,7 @@ public class EndDimension : BaseDimension, Dimension
     public override void ChoiceSelected(GiftChoices choice)
     {
         print("HERE");
+        endNote.SetActive(true);
         StartCoroutine(WaitToTravel());
     }
 
@@ -51,6 +54,7 @@ public class EndDimension : BaseDimension, Dimension
 
     public void Start()
     {
+        endNote.SetActive(false);
         StoryData currentStory;
 
         if (CheckForGoodEnding())
