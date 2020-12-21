@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf5d5e33bab057c43929a11bc8f25f44, type: 3}
+  m_Name: BadEnding
+  m_EditorClassIdentifier: 
+  _dimensionName: 
+  _beats:
+  - _choices:
+    - _text: End the cycle leave this realm in search for a better place
+      _beatId: 2
+    - _text: Accept your fate and attempt to trap another.
+      _beatId: 3
+    _text: 'Well, this is what you get for helping a stranger hahahah. I planted
+      a virus in each of the gifts and now the virus is in the world tree.  The job
+      of the weak is to be trampled by the strong, you played your role perfectly.
+      The only way to escape the tree is to trap another.  '
+    _id: 1
+    _Instruction:
+      _Instruction: 0
+      _Locations: 0
+      _GiftChoices: 0
+  - _choices: []
+    _text: "I misjudged you weren\u2019t weak at all. I hope you can rest in peace.
+      I won\u2019t forget you. "
+    _id: 2
+    _Instruction:
+      _Instruction: 0
+      _Locations: 0
+      _GiftChoices: 0
+  - _choices: []
+    _text: 'Hahaha, I guess even in the large dimension they had people like you.
+      I did try to hold out as long as I could... But the tree is cold and lonely,
+      it can break even the strongest. Take care, traveller.  '
+    _id: 3
+    _Instruction:
+      _Instruction: 0
+      _Locations: 0
+      _GiftChoices: 0
+  _notes: []

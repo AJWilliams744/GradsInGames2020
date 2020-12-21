@@ -161,4 +161,9 @@ public class Game : MonoBehaviour
     {
         return _data.GetDimensionName();
     }
+
+    public void SetStoryData(StoryData newData)
+    {
+        _data = newData;
+    }
 }

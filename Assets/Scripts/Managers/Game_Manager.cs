@@ -213,4 +213,9 @@ public class Game_Manager : MonoBehaviour
     {
         musicManager.NextSong();
     }
+
+    public Game GetGame()
+    {
+        return game;
+    }
 }

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf5d5e33bab057c43929a11bc8f25f44, type: 3}
-  m_Name: BaseStory
+  m_Name: MazeDimension
   m_EditorClassIdentifier: 
   _dimensionName: MazeDimension
   _beats:
@@ -19,11 +19,11 @@ MonoBehaviour:
       _beatId: 2
     - _text: Reject the gift
       _beatId: 3
-    _text: "Seems like the power is back on, guess those candles weren\u2019t a waste,
-      well done.\r\nBut it seems the power disrupted the travel tunnel, you've been
-      thrown into the world trees domain.\r\nYou must reconnect the tree to escape,
-      there will be 3 mazes only 1 holds the tree\r.\nThe rest hold a single secret
-      note.\nOnce again, I can offer you a gift, I hope you can trust me now.\r"
+    _text: "Seems like the power is back on, good job. However, it seems the power
+      caused a large ripple, you've been thrown into the trunk. You must reach the
+      seedling to leave, from memory there are 3 mazes only 1 holds the seedling.
+      The rest hold a single note, you\u2019re not the only to find themselves here.
+      Once again, I can offer you a gift, I hope you can trust me now."
     _id: 1
     _Instruction:
       _Instruction: 2
@@ -38,7 +38,7 @@ MonoBehaviour:
       _Locations: 2
       _GiftChoices: 0
   - _choices: []
-    _text: "Oh, okay...\r\nWe'll it\u2019s not like you'll have a choice soon anyway.\r"
+    _text: "We'll it\u2019s not like you'll have a choice soon anyway."
     _id: 3
     _Instruction:
       _Instruction: 1

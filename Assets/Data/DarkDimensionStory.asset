@@ -21,42 +21,32 @@ MonoBehaviour:
       _beatId: 3
     - _text: Freedom (Quit to menu)
       _beatId: 3
-    _text: 'Looks like the laptop is unaffected by the effects of this dimension.
-
-      I''ll
-      keep it short, I need you to turn on a switch at the end of the dimension,
-      we don''t have enough power to move on.
-
-
-      I can only gift you a lighter
-      so I hope you will help me.
-
-
-
-
-'
+    _text: "Looks like it\u2019s worse than I thought, the light fluctuations have
+      caused the ripples in the path. This wouldn\u2019t be much of a problem if
+      we still had power to stabilise the matter. All I can pass through is a lighter,
+      I hope you'll still help me. "
     _id: 1
     _Instruction:
       _Instruction: 2
       _Locations: 1
       _GiftChoices: 0
   - _choices: []
-    _text: Enjoy this gift, it wont be the last.  Use the left click to turn on,
-      right click to focus.
+    _text: Good, all new friendships start with deceit.  Use the left click to turn
+      on, right click to focus.
     _id: 2
     _Instruction:
       _Instruction: 1
       _Locations: 1
       _GiftChoices: 0
   - _choices: []
-    _text: Try to remember how to get back here, lets see if I can hide till then.
+    _text: "I\u2019m only trying to leave, you large dimensions are so arrogant."
     _id: 4
     _Instruction:
       _Instruction: 0
       _Locations: 0
       _GiftChoices: 0
   - _choices: []
-    _text: I like your confidence, show me what you can do
+    _text: "... \nI'll see if you can keep this up"
     _id: 3
     _Instruction:
       _Instruction: 1
