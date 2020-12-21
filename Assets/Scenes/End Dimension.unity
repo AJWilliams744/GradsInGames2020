@@ -571,7 +571,7 @@ PrefabInstance:
     - target: {fileID: 6936376151581961905, guid: bd910edd77cbfa44faf40d2e899ab660, type: 3}
       propertyPath: _data
       value: 
-      objectReference: {fileID: 11400000, guid: 258b1f1a297b5aa4f822b4e1407cf67c, type: 2}
+      objectReference: {fileID: 11400000, guid: 690a90e42e00f9c46b94d02532ed63a9, type: 2}
     - target: {fileID: 6964316202045660774, guid: bd910edd77cbfa44faf40d2e899ab660, type: 3}
       propertyPath: orthographic size
       value: 5
@@ -2221,10 +2221,6 @@ PrefabInstance:
     - target: {fileID: 7435105464204613973, guid: 460a6698c81da384fade7ccc09d3901d, type: 3}
       propertyPath: m_Name
       value: Fence (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7435105464204613973, guid: 460a6698c81da384fade7ccc09d3901d, type: 3}
-      propertyPath: m_Layer
-      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7810681745930126319, guid: 460a6698c81da384fade7ccc09d3901d, type: 3}
       propertyPath: m_LocalPosition.x

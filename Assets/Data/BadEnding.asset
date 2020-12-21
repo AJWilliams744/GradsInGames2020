@@ -25,7 +25,7 @@ MonoBehaviour:
       The only way to escape the tree is to trap another.  '
     _id: 1
     _Instruction:
-      _Instruction: 0
+      _Instruction: 2
       _Locations: 0
       _GiftChoices: 0
   - _choices: []
@@ -33,7 +33,7 @@ MonoBehaviour:
       I won\u2019t forget you. "
     _id: 2
     _Instruction:
-      _Instruction: 0
+      _Instruction: 1
       _Locations: 0
       _GiftChoices: 0
   - _choices: []
@@ -42,7 +42,7 @@ MonoBehaviour:
       it can break even the strongest. Take care, traveller.  '
     _id: 3
     _Instruction:
-      _Instruction: 0
+      _Instruction: 1
       _Locations: 0
       _GiftChoices: 0
   _notes: []

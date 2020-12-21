@@ -17,28 +17,31 @@ MonoBehaviour:
   - _choices:
     - _text: Forgive the voice and offer to take his place
       _beatId: 2
-    - _text: Accept your fate and attempt to trap another.
+    - _text: Leave immediately forget this ever happened
       _beatId: 3
-    _text: Leave immediately forget this ever happened
+    _text: "Well, it seems you knew all along that something was wrong. These gifts
+      had a virus in that would trap you in the divine trunk and set me free. Well,
+      go on your way now, I won\u2019t bother you any further. I just hope I don\u2019t
+      have to wait another thousand years in this void before I can see the sun again. "
     _id: 1
     _Instruction:
-      _Instruction: 0
+      _Instruction: 2
       _Locations: 0
       _GiftChoices: 0
   - _choices: []
-    _text: "I guess even is this cruel world you meet saints. I won\u2019t forget
+    _text: "I guess even in this cruel world you meet saints. I won\u2019t forget
       what you\u2019ve done for me. Thank you, traveller, my pain has finally ended.
       I can\u2019t wait to feel the warmth and comfort of the sun again."
     _id: 2
     _Instruction:
-      _Instruction: 0
+      _Instruction: 1
       _Locations: 0
       _GiftChoices: 0
   - _choices: []
     _text: ....................................................................................................
     _id: 3
     _Instruction:
-      _Instruction: 0
+      _Instruction: 1
       _Locations: 0
       _GiftChoices: 0
   _notes: []

@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 6614316976661859402}
   - component: {fileID: 8948143896464259200}
   - component: {fileID: 6679396390207540012}
-  m_Layer: 0
-  m_Name: Fence
+  m_Layer: 16
+  m_Name: Fence_P
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7435105464204613973}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: -35.01292, y: 2.2987523, z: 21.473682}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &6614316976661859402
 MeshFilter:
   m_ObjectHideFlags: 0

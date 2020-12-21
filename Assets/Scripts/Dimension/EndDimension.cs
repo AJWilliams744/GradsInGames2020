@@ -8,9 +8,7 @@ public class EndDimension : BaseDimension, Dimension
     [SerializeField] private StoryData badEnding;
     [SerializeField] private StoryData goodEnding;
     public void LoadProgress()
-    {        
-        gm.NextSong();
-
+    {    
         SaveDimension(); //Create an empty location for player to return if quit;
     }
 
@@ -26,14 +24,27 @@ public class EndDimension : BaseDimension, Dimension
 
     public override void ChoiceSelected(GiftChoices choice)
     {
-        
+        print("HERE");
+        StartCoroutine(WaitToTravel());
+    }
+
+    private IEnumerator WaitToTravel()
+    {
+        for(float i=0; i < 30; i += Time.deltaTime)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+        print("loading");
+        PlayerPrefs.SetInt("Scene", 0);
+
+        SceneManager.LoadScene("LoadingScene");
     }
 
     public override void SaveDimension()
     {
         int buildIndex = SceneManager.GetActiveScene().buildIndex;
 
-        DimensionStorage gameFile = GameSave_Manager.CreateDimensionSaveGameObject(0, null, false, false, buildIndex);
+        DimensionStorage gameFile = GameSave_Manager.CreateDimensionSaveGameObject(0, notes, false, false, buildIndex);
 
         GameSave_Manager.SaveDimension(gameFile, dimensionName);
     }
@@ -66,6 +77,7 @@ public class EndDimension : BaseDimension, Dimension
             if (hasGift) { checkForGifts = true; }
         }
 
+        //return false;
         return !checkForGifts; //Gifts are evil
     }
 
