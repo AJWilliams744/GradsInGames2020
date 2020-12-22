@@ -20,9 +20,10 @@ MonoBehaviour:
     - _text: Leave immediately forget this ever happened
       _beatId: 3
     _text: "Well, it seems you knew all along that something was wrong. These gifts
-      had a virus in that would trap you in the divine trunk and set me free. Well,
-      go on your way now, I won\u2019t bother you any further. I just hope I don\u2019t
-      have to wait another thousand years in this void before I can see the sun again. "
+      had a virus in that would trap you in the great tree trunk and set me free.
+      Well, go on your way now, I won\u2019t bother you any further. I just hope
+      I don\u2019t have to wait another thousand years in this void before I can
+      see the sun again. "
     _id: 1
     _Instruction:
       _Instruction: 2

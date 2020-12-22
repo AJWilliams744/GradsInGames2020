@@ -38,7 +38,7 @@ MonoBehaviour:
       _Locations: 2
       _GiftChoices: 0
   - _choices: []
-    _text: "We'll it\u2019s not like you'll have a choice soon anyway."
+    _text: "Well it\u2019s not like you'll have a choice soon anyway."
     _id: 3
     _Instruction:
       _Instruction: 1

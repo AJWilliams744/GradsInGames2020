@@ -47,6 +47,7 @@ public class CountDownZoneParent : MonoBehaviour
     {
         StopAllCoroutines();
         currentRoutine = null;
+        uiText.text = "";
         uiText.gameObject.SetActive(false);
     }
 
