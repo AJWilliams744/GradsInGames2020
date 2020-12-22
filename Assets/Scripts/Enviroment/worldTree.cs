@@ -17,12 +17,8 @@ public class worldTree : MonoBehaviour
     private void OnEnable()
     {
 
-        
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Game_Manager>();
-        if (!gameManager)
-        {
-            Debug.LogError("No Game Manager in Scene");
-        }
+
+        gameManager = StaticClasses.GetGameManager();
 
         gameManager.SwitchTriggered("WorldTree");
         gameManager.NextSong();

@@ -81,6 +81,8 @@ public class DarkDimension : BaseDimension, Dimension
 
     public override void SaveDimension() //Save whenever something important happens
     {
+        base.SaveDimension();
+
         int buildIndex = SceneManager.GetActiveScene().buildIndex;
 
         DimensionStorage gameFile = GameSave_Manager.CreateDimensionSaveGameObject(checkPointSystem.GetCurrentInt(), notes, isLevelCompleted, hasGift, buildIndex);

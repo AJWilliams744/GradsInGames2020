@@ -50,6 +50,8 @@ public class MazeDimension : BaseDimension, Dimension
 
     public override void SaveDimension()
     {
+        base.SaveDimension();
+
         int buildIndex = SceneManager.GetActiveScene().buildIndex;
 
         DimensionStorage gameFile = GameSave_Manager.CreateDimensionSaveGameObject(checkPointSystem.GetCurrentInt(), notes, isLevelCompleted, hasGift, buildIndex);
@@ -78,6 +80,4 @@ public class MazeDimension : BaseDimension, Dimension
 
         }
     }
-
-
 }

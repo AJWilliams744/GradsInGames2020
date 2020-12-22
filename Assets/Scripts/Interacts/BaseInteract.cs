@@ -8,10 +8,7 @@ public class BaseInteract : MonoBehaviour
     // Start is called before the first frame update
     public virtual void Start()
     {
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Game_Manager>();
-        if (!gameManager)
-        {
-            Debug.LogError("No Game Manager in Scene");
-        }
+        gameManager = StaticClasses.GetGameManager();
     }
 }
+

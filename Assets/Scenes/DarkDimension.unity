@@ -2770,6 +2770,11 @@ Transform:
   m_Father: {fileID: 1945984266}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &621756907 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5487537533383502174, guid: c5d44a085b38eaa4e86e345b0c506391, type: 3}
+  m_PrefabInstance: {fileID: 8083874495708585382}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &640903672
 GameObject:
   m_ObjectHideFlags: 0
@@ -6637,6 +6642,7 @@ MonoBehaviour:
   giftPrefab: {fileID: 2322208673667158262, guid: 07af9796b319c404885d7cec2d5b04ef, type: 3}
   PauseMenu: {fileID: 1193557673}
   globalLight: {fileID: 1416542713}
+  savingText: {fileID: 621756907}
   GameArea: {fileID: 1225438959}
   startFadeTime: 2
   endFadeTime: 6
@@ -8071,6 +8077,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5476192912385634701, guid: 36e9d921e7902fa44a04bde877fbf2dd, type: 3}
+      propertyPath: zoneParent
+      value: 
+      objectReference: {fileID: 1225438959}
     - target: {fileID: 5476192912385634702, guid: 36e9d921e7902fa44a04bde877fbf2dd, type: 3}
       propertyPath: m_Name
       value: NoteLocation
@@ -8253,6 +8263,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8083874496733831949, guid: c5d44a085b38eaa4e86e345b0c506391, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 984952782}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5d44a085b38eaa4e86e345b0c506391, type: 3}
 --- !u!1 &8083874495708585383 stripped

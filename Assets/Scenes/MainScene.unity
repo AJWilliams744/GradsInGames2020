@@ -6000,6 +6000,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114617798254658452, guid: b1bb3949fda19d34fb9a711f3eaea7ee, type: 3}
+      propertyPath: m_fontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114617798254658452, guid: b1bb3949fda19d34fb9a711f3eaea7ee, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 2853826228454555013, guid: b1bb3949fda19d34fb9a711f3eaea7ee, type: 3}
       propertyPath: laptopAudio
       value: 

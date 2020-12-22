@@ -16,7 +16,7 @@ public class PlayerInteract : MonoBehaviour
 
     private void Start()
     {
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Game_Manager>();
+        gameManager = StaticClasses.GetGameManager();
     }
 
     // Check to see if interactable object is infront of player

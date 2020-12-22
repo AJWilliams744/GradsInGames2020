@@ -15,7 +15,14 @@ public class Player_Manager : MonoBehaviour
 
     private void Start()
     {
-        gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Game_Manager>();
+        gm = StaticClasses.GetGameManager();
+
+        if (PlayerPrefs.GetInt("MouseSensitivity") > 0)
+        {
+            SetMouseSensitivity(PlayerPrefs.GetInt("MouseSensitivity"));
+
+        }
+
     }
 
     public void DisablePlayer()
@@ -80,9 +87,9 @@ public class Player_Manager : MonoBehaviour
         playerMovement.TeleportPlayer(newLocation);
     }
 
-    public void SetMouseSensitivity(Slider slider)
+    public void SetMouseSensitivity(int value)
     {
-        PlayerPrefs.SetInt("MouseSensitivity", (int)slider.value);
-        mouseLook.SetMouseSensitivity((int)slider.value);
+        PlayerPrefs.SetInt("MouseSensitivity", value);
+        mouseLook.SetMouseSensitivity(value);
     }
 }

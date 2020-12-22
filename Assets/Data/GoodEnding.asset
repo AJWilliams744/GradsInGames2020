@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf5d5e33bab057c43929a11bc8f25f44, type: 3}
   m_Name: GoodEnding
   m_EditorClassIdentifier: 
-  _dimensionName: 
+  _dimensionName: EndDimension
   _beats:
   - _choices:
     - _text: Forgive the voice and offer to take his place

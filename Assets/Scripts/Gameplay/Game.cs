@@ -46,23 +46,22 @@ public class Game : MonoBehaviour
 
     private void UpdateInput()
     {
-        if (Input.GetKeyDown(KeyCode.T)) //Changed as escape doesnt work in editor
-        {
-            print("I PRESSED");
-            if(_currentBeat != null)
-            {
-                if (_currentBeat.ID == 1)
-                {
-                    Application.Quit(); // TODO - Kick to main menu
-                }
-                else
-                {
-                    DisplayBeat(1);
-                }
-            }
-        }
-        else
-        {
+        //if (Input.GetKeyDown(KeyCode.T)) //Changed as escape doesnt work in editor
+        //{
+        //    if(_currentBeat != null)
+        //    {
+        //        if (_currentBeat.ID == 1)
+        //        {
+        //            Application.Quit(); // TODO - Kick to main menu
+        //        }
+        //        else
+        //        {
+        //            DisplayBeat(1);
+        //        }
+        //    }
+        //}
+        //else
+        //{
             KeyCode alpha = KeyCode.Alpha1;
             KeyCode keypad = KeyCode.Keypad1;
 
@@ -81,7 +80,7 @@ public class Game : MonoBehaviour
                 ++alpha;
                 ++keypad;
             }
-        }
+        //}
     }
 
     private void DisplayBeat(int id)

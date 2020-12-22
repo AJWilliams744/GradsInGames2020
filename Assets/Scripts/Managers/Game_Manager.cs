@@ -21,7 +21,6 @@ public class Game_Manager : MonoBehaviour
 
     private delegate void methodPasser();
 
-
     private float laptopMoveSpeed = 2f;
 
     // Start is called before the first frame update

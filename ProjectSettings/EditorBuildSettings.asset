@@ -11,9 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DarkDimension.unity
     guid: 588278d951172764cba095ba723e395d
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MazeDimension.unity
     guid: 6ddc074a24eb7f448992444ff83b630a
+  - enabled: 1
+    path: Assets/Scenes/End Dimension.unity
+    guid: 76751346184640f4889555a209c52324
   - enabled: 1
     path: Assets/Scenes/LoadingScene.unity
     guid: b276e7b0325dac241a76095857b58edd

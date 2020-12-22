@@ -18,6 +18,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private TMP_Text noteContentsArea;
 
     [SerializeField] private Slider mouseSensitivitySlider;
+    [SerializeField] private Player_Manager playerManager;
 
     private Game_Manager gameManager;
 
@@ -114,24 +115,22 @@ public class PauseMenu : MonoBehaviour
     private void Start()
     {
         //gameObject.SetActive(false);
+
+        mouseSensitivitySlider.onValueChanged.AddListener(delegate { playerManager.SetMouseSensitivity((int)mouseSensitivitySlider.value); });
     }
     private void Awake()
     {
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Game_Manager>();
-        if (!gameManager)
-        {
-            Debug.LogError("No Game Manager in Scene");
-        }
+        gameManager = StaticClasses.GetGameManager();
        
 
-        if(PlayerPrefs.GetFloat("MouseSensitivity") > 0)
+        if(PlayerPrefs.GetInt("MouseSensitivity") > 0)
         {
-            mouseSensitivitySlider.value = PlayerPrefs.GetFloat("MouseSensitivity");
+            mouseSensitivitySlider.value = PlayerPrefs.GetInt("MouseSensitivity");
             //print(PlayerPrefs.GetFloat("MouseSensitivity"));
         }
         else
         {
-            PlayerPrefs.SetFloat("MouseSensitivity", mouseSensitivitySlider.value);
+            PlayerPrefs.SetInt("MouseSensitivity", (int)mouseSensitivitySlider.value);
         }
     }
 

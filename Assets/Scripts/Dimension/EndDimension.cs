@@ -11,7 +11,7 @@ public class EndDimension : BaseDimension, Dimension
     [SerializeField] private GameObject endNote;
     public void LoadProgress()
     {    
-        SaveDimension(); //Create an empty location for player to return if quit;
+       
     }
 
     public void NormalStart()
@@ -45,6 +45,8 @@ public class EndDimension : BaseDimension, Dimension
 
     public override void SaveDimension()
     {
+        base.SaveDimension();
+
         int buildIndex = SceneManager.GetActiveScene().buildIndex;
 
         DimensionStorage gameFile = GameSave_Manager.CreateDimensionSaveGameObject(0, notes, false, false, buildIndex);
@@ -67,6 +69,7 @@ public class EndDimension : BaseDimension, Dimension
         }
 
         gm.GetGame().SetStoryData(currentStory);
+        SaveDimension(); //Create an empty location for player to return if quit;
     }
 
     private bool CheckForGoodEnding()
@@ -78,7 +81,7 @@ public class EndDimension : BaseDimension, Dimension
         foreach(string dimensionName in dimensionNames)
         {
             DimensionStorage gameFile = GameSave_Manager.LoadDimension(dimensionName);
-            if (hasGift) { checkForGifts = true; }
+            if (gameFile.hasGift) { checkForGifts = true; }
         }
 
         //return false;
