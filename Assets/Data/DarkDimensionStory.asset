@@ -24,7 +24,7 @@ MonoBehaviour:
     _text: "Looks like it\u2019s worse than I thought, the light fluctuations have
       caused the ripples in the path. This wouldn\u2019t be much of a problem if
       we still had power to stabilise the matter. All I can pass through is a lighter,
-      I hope you'll still help me. "
+      I hope you'll still help me."
     _id: 1
     _Instruction:
       _Instruction: 2
@@ -55,9 +55,15 @@ MonoBehaviour:
   _notes:
   - _iD: 0
     _collected: 0
-    _title: How it all began
-    _contents: asadasd
+    _title: The Tree
+    _contents: "The tree is the centre of every dimension and is kept in check by
+      the rules of the realm. I was following the branch to return to my family in
+      the wisp dimension why did I try to help the voice in the tree. For some reason
+      I couldn\u2019t say no, I still don\u2019t understand what is going on\u2026"
   - _iD: 1
     _collected: 0
-    _title: Sometime in the furture
-    _contents: asdasdadssa
+    _title: The Gifts
+    _contents: "Strange, these gifts feel weird. There is more to them than meets
+      the eye. The voice seems to be hiding something. I don\u2019t really have much
+      choice now that I\u2019m here, but do I really need these gifts to keep going.
+      Just what is going on here?"

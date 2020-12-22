@@ -23,7 +23,7 @@ MonoBehaviour:
       caused a large ripple, you've been thrown into the trunk. You must reach the
       seedling to leave, from memory there are 3 mazes only 1 holds the seedling.
       The rest hold a single note, you\u2019re not the only to find themselves here.
-      Once again, I can offer you a gift, I hope you can trust me now."
+      Once again, I can offer you a gift, I hope you can trust me now. "
     _id: 1
     _Instruction:
       _Instruction: 2
@@ -47,9 +47,17 @@ MonoBehaviour:
   _notes:
   - _iD: 0
     _collected: 0
-    _title: asdasf
-    _contents: asdasd
+    _title: The branch
+    _contents: "Just how did the voice get stuck here. I\u2019ve never heard of this
+      happening before. The great tree is contained by the rules of this realm. Nothing
+      goes against these rules, its impossible. Once you go into a branch you appear
+      in the dimension it connects to. It just doesn\u2019t make sense."
   - _iD: 1
     _collected: 0
-    _title: aa
-    _contents: sadasd
+    _title: The sapling
+    _contents: "Surely the voice wasn\u2019t talking about the sapling from the stories,
+      he can\u2019t be. It\u2019s just a stupid story that my parents told me to
+      keep me well behaved, I use the same story on my kids now. I believed it till
+      I grew older but it\u2019s simply a badly written ghost story. In short if
+      you missed behaved as a kid the sapling would eat you and would trap you in
+      its branches for eternity. The sapling doesn\u2019t exist, it can\u2019t \u2026"

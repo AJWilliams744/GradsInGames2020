@@ -20,9 +20,9 @@ MonoBehaviour:
     - _text: Run back to the menu
       _beatId: 3
     _text: "Good, I managed to catch you before you travelled further. I'll cut to
-      the chase I need help. The power to the divine tree is down and I\u2019m trapped
+      the chase I need help. The power to the great tree is down and I\u2019m trapped
       on an unknown branch of light. I can\u2019t reach the switch in the smaller
-      dimension to reset the tree, can you help?"
+      dimension to open the branch, can you help?"
     _id: 1
     _Instruction:
       _Instruction: 2
