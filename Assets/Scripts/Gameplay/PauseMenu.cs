@@ -20,6 +20,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private Slider mouseSensitivitySlider;
     [SerializeField] private Player_Manager playerManager;
 
+    [SerializeField] private GameObject countDown;
+
     private Game_Manager gameManager;
 
     private void OnEnable()
@@ -34,6 +36,7 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
+        countDown.SetActive(false);
         gameObject.SetActive(true);
         ShowMain();
         Time.timeScale = 0;
@@ -42,6 +45,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
+        countDown.SetActive(true);
         gameObject.SetActive(false); //Incase called from somewhere else
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;

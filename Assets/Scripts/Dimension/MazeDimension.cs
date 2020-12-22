@@ -47,6 +47,11 @@ public class MazeDimension : BaseDimension, Dimension
 
         SaveDimension(); //Create an empty location for player to return if quit;
     }
+    public override void FoundNote(Note note)
+    {
+        base.FoundNote(note);
+        SaveDimension();
+    }
 
     public override void SaveDimension()
     {

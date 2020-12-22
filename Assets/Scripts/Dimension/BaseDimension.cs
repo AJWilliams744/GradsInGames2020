@@ -168,16 +168,7 @@ public class BaseDimension : MonoBehaviour
     {
         if (gm == null) { GetGameManager(); }
 
-        if (showSavingCoroutine == null) 
-        { 
-            showSavingCoroutine = StartCoroutine(ShowSavingText());
-        }
-        else
-        {
-            StopCoroutine(ShowSavingText());
-            StartCoroutine(ShowSavingText());
-        }
-
+        StartCoroutine(ShowSavingText());
         
         print(dimensionName);
         //int buildIndex = SceneManager.GetActiveScene().buildIndex;

@@ -13,7 +13,7 @@ public class NoteFound : MonoBehaviour
 
     private IEnumerator waitToTurnOff()
     {
-        for(float i = 0; i < 3; i += Time.deltaTime)
+        for(float i = 0; i < 3; i += Time.unscaledDeltaTime)
         {
             yield return new WaitForEndOfFrame();
         }

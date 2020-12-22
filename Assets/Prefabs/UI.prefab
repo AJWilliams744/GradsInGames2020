@@ -109,7 +109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -8.8, y: -86.8999}
+  m_AnchoredPosition: {x: 0, y: -84}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &268859626
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8160377, g: 1, b: 0.98909163, a: 0.8352941}
+  m_Color: {r: 0.8160377, g: 1, b: 0.98909163, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -830,7 +830,7 @@ RectTransform:
   m_Children:
   - {fileID: 268859624}
   m_Father: {fileID: 8083874495673876621}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -905,7 +905,7 @@ RectTransform:
   - {fileID: 714127646}
   - {fileID: 1115051770}
   m_Father: {fileID: 8083874495673876621}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1374,8 +1374,8 @@ RectTransform:
   m_Children:
   - {fileID: 8083874496245505794}
   - {fileID: 8083874496733831948}
-  - {fileID: 1864330757}
   - {fileID: 1706500296}
+  - {fileID: 1864330757}
   - {fileID: 1936643134226976635}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1710,6 +1710,10 @@ PrefabInstance:
       propertyPath: mouseSensitivitySlider
       value: 
       objectReference: {fileID: 1689740865}
+    - target: {fileID: 3431062461172411429, guid: 589f078ec75c6fe48bf59b4ee24df68a, type: 3}
+      propertyPath: countDown
+      value: 
+      objectReference: {fileID: 268859623}
     - target: {fileID: 3431062461172411431, guid: 589f078ec75c6fe48bf59b4ee24df68a, type: 3}
       propertyPath: m_Name
       value: PauseMenu
