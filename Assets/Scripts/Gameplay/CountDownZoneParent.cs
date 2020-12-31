@@ -30,8 +30,7 @@ public class CountDownZoneParent : MonoBehaviour
             if(currentTime <= 0)
             {
                 gameManager.PlayerDead();
-                uiText.gameObject.SetActive(false);
-                StopAllCoroutines();
+                StopCountDown();
             }
         }
         
