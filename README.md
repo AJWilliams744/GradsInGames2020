@@ -1,4 +1,4 @@
-# GradsInGames2020
+# Wanderer
 Unity Project for Grads in Games 2020
 
 # Other Made Assets
